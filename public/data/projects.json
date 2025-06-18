@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "AI-Powered Analytics Dashboard",
+    "description": "Advanced machine learning platform for real-time data analytics and predictive modeling",
+    "longDescription": "Developed a comprehensive AI-driven analytics platform that processes millions of data points in real-time. The system uses advanced machine learning algorithms to provide predictive insights and automated anomaly detection for enterprise clients.",
+    "image": "/images/ai-project-1.webp",
+    "technologies": ["Python", "TensorFlow", "React", "Node.js", "Docker", "Kubernetes"],
+    "category": "AI/ML",
+    "demoUrl": "https://demo.example.com",
+    "githubUrl": "https://github.com/example/ai-dashboard",
+    "featured": true,
+    "completion": "2024",
+    "impact": "Reduced data processing time by 85% and improved prediction accuracy by 40%"
+  },
+  {
+    "id": 2,
+    "title": "Quantum Simulator Web App",
+    "description": "Interactive quantum computing simulator with advanced visualization capabilities",
+    "longDescription": "Built a web-based quantum computing simulator that allows users to experiment with quantum algorithms and visualize quantum states. Features include circuit building, state visualization, and educational tutorials.",
+    "image": "/images/project-mobile.webp",
+    "technologies": ["React", "TypeScript", "Three.js", "WebGL", "Quantum.js"],
+    "category": "Quantum",
+    "demoUrl": "https://quantum-sim.example.com",
+    "githubUrl": "https://github.com/example/quantum-simulator",
+    "featured": true,
+    "completion": "2024",
+    "impact": "Used by over 1000 students and researchers worldwide"
+  },
+  {
+    "id": 3,
+    "title": "Blockchain Trading Bot",
+    "description": "Automated cryptocurrency trading system with AI-driven market analysis",
+    "longDescription": "Developed an intelligent trading bot that analyzes market trends using deep learning models. The system can execute trades based on technical indicators and sentiment analysis of social media data.",
+    "image": "/images/bitcoin-bg.jpg",
+    "technologies": ["Python", "PyTorch", "FastAPI", "Redis", "PostgreSQL", "Docker"],
+    "category": "Blockchain",
+    "demoUrl": "https://trading-bot.example.com",
+    "githubUrl": "https://github.com/example/crypto-bot",
+    "featured": false,
+    "completion": "2023",
+    "impact": "Achieved 23% average monthly returns with 89% accuracy"
+  },
+  {
+    "id": 4,
+    "title": "Neural Network Visualizer",
+    "description": "Interactive tool for visualizing and understanding deep learning architectures",
+    "longDescription": "Created an educational platform that helps students and professionals understand neural network architectures through interactive 3D visualizations. Users can build networks and see how data flows through them.",
+    "image": "/images/hero-background.jpg",
+    "technologies": ["React", "D3.js", "Three.js", "Python", "Flask"],
+    "category": "AI/ML",
+    "demoUrl": "https://neural-viz.example.com",
+    "githubUrl": "https://github.com/example/neural-visualizer",
+    "featured": false,
+    "completion": "2023",
+    "impact": "Featured in 5 AI education conferences"
+  }
+]

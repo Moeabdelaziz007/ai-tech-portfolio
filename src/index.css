@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --sidebar-background: 30 30 30;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 0 255 0;
+    --sidebar-primary-foreground: 30 30 30;
+    --sidebar-accent: 128 128 128;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 0 255 0;
+    --sidebar-ring: 0 255 0;
+  }
+
+  .dark {
+    --sidebar-background: 30 30 30;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 0 255 0;
+    --sidebar-primary-foreground: 30 30 30;
+    --sidebar-accent: 128 128 128;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 0 255 0;
+    --sidebar-ring: 0 255 0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-dark-bg text-tech-white font-sans overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  img {
+    object-position: top;
+  }
+}
+
+@layer components {
+  .neon-border {
+    box-shadow: 0 0 10px #00FF00, inset 0 0 10px rgba(0, 255, 0, 0.1);
+    border: 1px solid #00FF00;
+  }
+  
+  .glass-effect {
+    background: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+  }
+  
+  .matrix-bg {
+    background: linear-gradient(90deg, transparent 90%, #00FF00 100%);
+    background-size: 20px 20px;
+    animation: matrix 8s linear infinite;
+  }
+  
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #00FF00;
+    animation: typing 3.5s steps(40, end), blink 1s step-end infinite;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1E1E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00FF00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00CC00;
+}
+
+/* Quantum particle effects */
+.quantum-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #00FFFF;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float 4s ease-in-out infinite;
+}
+
+.quantum-particle:nth-child(2n) {
+  background: #00FF00;
+  animation-delay: -1s;
+}
+
+.quantum-particle:nth-child(3n) {
+  background: #FF00FF;
+  animation-delay: -2s;
+}
+
+/* Neural network lines */
+.neural-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00FF00, transparent);
+  opacity: 0.6;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Holographic effect */
+.holographic {
+  background: linear-gradient(
+    45deg,
+    #00FF00 0%,
+    #00FFFF 25%,
+    #FF00FF 50%,
+    #00FF00 75%,
+    #00FFFF 100%
+  );
+  background-size: 400% 400%;
+  animation: holographic 3s ease infinite;
+}
+
+@keyframes holographic {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitch-1 0.5s infinite;
+  color: #00FFFF;
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitch-2 0.5s infinite;
+  color: #FF00FF;
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+    transform: translate(0);
+  }
+  15%, 49% {
+    transform: translate(-2px, 2px);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% {
+    transform: translate(0);
+  }
+  21%, 62% {
+    transform: translate(2px, -2px);
+  }
+}
