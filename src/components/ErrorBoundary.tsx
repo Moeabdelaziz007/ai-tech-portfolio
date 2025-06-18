@@ -1,6 +1,6 @@
 import React from "react";
 
-const searilizeError = (error: any) => {
+const serializeError = (error: any) => {
   if (error instanceof Error) {
     return error.message + "\n" + error.stack;
   }
@@ -27,8 +27,13 @@ export class ErrorBoundary extends React.Component<
           <h2 className="text-red-500">
             Something went wrong.
           </h2>
+ codex/remove-unnecessary-data-oid-attributes
           <pre className="mt-2 text-sm">
             {searilizeError(this.state.error)}
+
+          <pre className="mt-2 text-sm" data-oid="372._g8">
+            {serializeError(this.state.error)}
+ main
           </pre>
         </div>
       );
