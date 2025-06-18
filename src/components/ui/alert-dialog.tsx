@@ -21,7 +21,6 @@ const AlertDialogOverlay = React.forwardRef<
     )}
     {...props}
     ref={ref}
-    data-oid="0vdkdiz"
   />
 ));
 AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName;
@@ -30,8 +29,8 @@ const AlertDialogContent = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
 >(({ className, ...props }, ref) => (
-  <AlertDialogPortal data-oid="ntc_46m">
-    <AlertDialogOverlay data-oid="negy_50" />
+  <AlertDialogPortal>
+    <AlertDialogOverlay />
     <AlertDialogPrimitive.Content
       ref={ref}
       className={cn(
@@ -39,7 +38,6 @@ const AlertDialogContent = React.forwardRef<
         className,
       )}
       {...props}
-      data-oid="pc8eotg"
     />
   </AlertDialogPortal>
 ));
@@ -55,7 +53,6 @@ const AlertDialogHeader = ({
       className,
     )}
     {...props}
-    data-oid="k21.kbn"
   />
 );
 
@@ -71,7 +68,6 @@ const AlertDialogFooter = ({
       className,
     )}
     {...props}
-    data-oid="0_k26:v"
   />
 );
 
@@ -85,7 +81,6 @@ const AlertDialogTitle = React.forwardRef<
     ref={ref}
     className={cn("text-lg font-semibold", className)}
     {...props}
-    data-oid="f5zcp8-"
   />
 ));
 AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName;
@@ -98,7 +93,6 @@ const AlertDialogDescription = React.forwardRef<
     ref={ref}
     className={cn("text-sm text-zinc-500 dark:text-zinc-400", className)}
     {...props}
-    data-oid="46tnjrt"
   />
 ));
 AlertDialogDescription.displayName =
@@ -112,7 +106,6 @@ const AlertDialogAction = React.forwardRef<
     ref={ref}
     className={cn(buttonVariants(), className)}
     {...props}
-    data-oid="0r9qghr"
   />
 ));
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName;
@@ -129,7 +122,6 @@ const AlertDialogCancel = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="s:5fhud"
   />
 ));
 AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName;

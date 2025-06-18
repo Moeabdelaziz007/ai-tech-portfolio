@@ -242,18 +242,16 @@ const Chatbot = () => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 2, type: "spring" }}
-        data-oid="2s.uxqc"
       >
-        <AnimatePresence mode="wait" data-oid="_4fl2u:">
+        <AnimatePresence mode="wait">
           {isOpen ? (
             <motion.div
               key="close"
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
-              data-oid="bmjyx_c"
             >
-              <X size={24} data-oid=":f6vewd" />
+              <X size={24} />
             </motion.div>
           ) : (
             <motion.div
@@ -261,58 +259,51 @@ const Chatbot = () => {
               initial={{ rotate: 90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
-              data-oid="at12fa:"
             >
-              <MessageCircle size={24} data-oid="qgtt-fs" />
+              <MessageCircle size={24} />
             </motion.div>
           )}
         </AnimatePresence>
       </motion.button>
 
       {/* Chatbot Window */}
-      <AnimatePresence data-oid="skbxtpy">
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             className="fixed bottom-24 right-6 z-40 w-80 h-96 bg-dark-bg border border-neon-green/20 rounded-xl shadow-2xl flex flex-col"
-            data-oid=":61sl4t"
           >
             {/* Header */}
             <div
               className="flex items-center justify-between p-4 border-b border-neon-green/20"
-              data-oid="6n_pb1:"
             >
-              <div className="flex items-center space-x-2" data-oid="ryld1gl">
+              <div className="flex items-center space-x-2">
                 <div
                   className="w-8 h-8 bg-neon-green rounded-full flex items-center justify-center"
-                  data-oid="oy05ru0"
                 >
-                  <Bot size={16} className="text-dark-bg" data-oid="8jp3488" />
+                  <Bot size={16} className="text-dark-bg" />
                 </div>
-                <div data-oid="r.fsbln">
+                <div>
                   <h3
                     className="text-tech-white font-semibold"
-                    data-oid="7_f2exi"
                   >
                     أمريكي
                   </h3>
-                  <p className="text-xs text-medium-gray" data-oid="df_5v59">
+                  <p className="text-xs text-medium-gray">
                     متصل الآن
                   </p>
                 </div>
               </div>
               <div
                 className="w-2 h-2 bg-neon-green rounded-full animate-pulse"
-                data-oid="wpj:gnj"
               ></div>
             </div>
 
             {/* Messages */}
             <div
               className="flex-1 overflow-y-auto p-4 space-y-4"
-              data-oid="50_0w_m"
             >
               {messages.map((message) => (
                 <motion.div
@@ -320,7 +311,6 @@ const Chatbot = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
-                  data-oid="qv5emqq"
                 >
                   <div
                     className={`max-w-[80%] p-3 rounded-lg ${
@@ -328,15 +318,13 @@ const Chatbot = () => {
                         ? "bg-neon-green text-dark-bg"
                         : "bg-medium-gray/20 text-tech-white"
                     }`}
-                    data-oid="ify2kis"
                   >
                     <p
                       className="text-sm whitespace-pre-line"
-                      data-oid="8jae4j9"
                     >
                       {message.text}
                     </p>
-                    <p className="text-xs opacity-70 mt-1" data-oid="_7_jpw0">
+                    <p className="text-xs opacity-70 mt-1">
                       {message.timestamp.toLocaleTimeString("ar-EG", {
                         hour: "2-digit",
                         minute: "2-digit",
@@ -351,23 +339,19 @@ const Chatbot = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="flex justify-start"
-                  data-oid="0cqh7dm"
                 >
                   <div
                     className="bg-medium-gray/20 text-tech-white p-3 rounded-lg"
-                    data-oid="cis467:"
                   >
                     <div
                       className="flex items-center space-x-1"
-                      data-oid="pfq826."
                     >
                       <Loader2
                         size={16}
                         className="animate-spin"
-                        data-oid="-phryk2"
                       />
 
-                      <span className="text-sm" data-oid="th:og8u">
+                      <span className="text-sm">
                         يكتب...
                       </span>
                     </div>
@@ -375,15 +359,14 @@ const Chatbot = () => {
                 </motion.div>
               )}
 
-              <div ref={messagesEndRef} data-oid="gh26x1h" />
+              <div ref={messagesEndRef} />
             </div>
 
             {/* Input */}
             <div
               className="p-4 border-t border-neon-green/20"
-              data-oid="os.meb0"
             >
-              <div className="flex space-x-2" data-oid="bh_c:ip">
+              <div className="flex space-x-2">
                 <input
                   ref={inputRef}
                   type="text"
@@ -392,16 +375,14 @@ const Chatbot = () => {
                   onKeyPress={handleKeyPress}
                   placeholder="اكتب رسالتك هنا..."
                   className="flex-1 bg-medium-gray/20 text-tech-white placeholder-medium-gray px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-green/50"
-                  data-oid="lbr2u:4"
                 />
 
                 <button
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim() || isTyping}
                   className="bg-neon-green text-dark-bg p-2 rounded-lg hover:bg-neon-green/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  data-oid="fu:y9vm"
                 >
-                  <Send size={16} data-oid="c9v7mwj" />
+                  <Send size={16} />
                 </button>
               </div>
             </div>

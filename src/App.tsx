@@ -16,37 +16,35 @@ import { CodeAssistantPage } from "./projects/code-assistant/pages/CodeAssistant
 const Portfolio: React.FC = () => {
   return (
     <>
-      <BackgroundEffects data-oid="6_g2uru" />
-      <Navigation data-oid="w32lp-n" />
+      <BackgroundEffects />
+      <Navigation />
 
-      <main className="relative z-10" data-oid="_2_ywd4">
-        <HeroSection data-oid="5kekv4v" />
-        <AboutSection data-oid="0go-qt3" />
-        <ProjectsSection data-oid="cuusx5r" />
-        <DashboardSection data-oid="dsht4y2" />
-        <ContactSection data-oid="tti1mt1" />
+      <main className="relative z-10">
+        <HeroSection />
+        <AboutSection />
+        <ProjectsSection />
+        <DashboardSection />
+        <ContactSection />
       </main>
 
-      <Chatbot data-oid="8mma173" />
+      <Chatbot />
 
       {/* Footer */}
       <footer
         className="relative z-10 bg-black py-8 border-t border-neon-green/20"
-        data-oid="bijl2z2"
       >
-        <div className="container mx-auto px-4 text-center" data-oid="5-lcigy">
+        <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             className="text-medium-gray"
-            data-oid="pdf.0_9"
           >
-            <p className="mb-2" data-oid="4co_16u">
+            <p className="mb-2">
               © {new Date().getFullYear()} Mohamed H. Abdelaziz (Amrikyy). All
               rights reserved.
             </p>
-            <p className="text-sm text-neon-green" data-oid="2txouh8">
+            <p className="text-sm text-neon-green">
               Crafted with 🤖 AI • ⚡ Tech • 🔮 Quantum Innovation
             </p>
           </motion.div>
@@ -58,28 +56,24 @@ const Portfolio: React.FC = () => {
 
 function App() {
   return (
-    <Router data-oid="5wu14r_">
+    <Router>
       <div
         className="min-h-screen bg-dark-bg text-tech-white relative overflow-x-hidden"
-        data-oid="1onhz6c"
       >
-        <Routes data-oid="_3gsg60">
+        <Routes>
           <Route
             path="/"
-            element={<Portfolio data-oid="zjdw5:l" />}
-            data-oid="zsg_vhk"
+            element={<Portfolio />}
           />
 
           <Route
             path="/projects/quantum-simulator"
-            element={<QuantumSimulatorPage data-oid="mqm7.4b" />}
-            data-oid="h9f25pv"
+            element={<QuantumSimulatorPage />}
           />
 
           <Route
             path="/projects/code-assistant"
-            element={<CodeAssistantPage data-oid="nvb24hw" />}
-            data-oid="-oazyvr"
+            element={<CodeAssistantPage />}
           />
         </Routes>
       </div>

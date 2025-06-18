@@ -233,31 +233,27 @@ export const QuantumSimulatorPage: React.FC = () => {
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4"
-      data-oid="bnmamb1"
     >
-      <div className="container mx-auto max-w-7xl" data-oid="igm596-">
+      <div className="container mx-auto max-w-7xl">
         {/* Back Button */}
-        <div className="mb-6" data-oid="j__k43e">
+        <div className="mb-6">
           <button
             onClick={() => navigate("/")}
             className="flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg shadow-md transition-colors"
-            data-oid="jxq5cg1"
           >
-            <ArrowLeft size={20} data-oid="v2a-ea1" />
+            <ArrowLeft size={20} />
             Back to Portfolio
           </button>
         </div>
 
-        <div className="text-center mb-8" data-oid="x1z4_n1">
+        <div className="text-center mb-8">
           <h1
             className="text-4xl font-bold text-gray-800 mb-4"
-            data-oid="nx:6nlc"
           >
             Quantum Circuit Simulator v2.0
           </h1>
           <p
             className="text-lg text-gray-600 max-w-2xl mx-auto"
-            data-oid="rf4cs52"
           >
             Advanced quantum computing simulator with 3D visualization,
             tutorials, and circuit management.
@@ -267,81 +263,70 @@ export const QuantumSimulatorPage: React.FC = () => {
         {/* Feature Buttons */}
         <div
           className="mb-6 flex flex-wrap gap-2 justify-center"
-          data-oid="63:gb01"
         >
           <button
             onClick={() => setShowTutorial(true)}
             className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center gap-2"
-            data-oid="ka1i6p."
           >
-            <BookOpen size={16} data-oid="a45ibi6" />
+            <BookOpen size={16} />
             Interactive Tutorial
           </button>
           <button
             onClick={() => setShow3D(!show3D)}
             className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center gap-2"
-            data-oid="lay1t59"
           >
             {show3D ? "Hide 3D View" : "Show 3D View"}
           </button>
           <button
             onClick={() => setShowCircuitManager(!showCircuitManager)}
             className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center gap-2"
-            data-oid="eg6:kr0"
           >
-            <Settings size={16} data-oid="zthp3kj" />
+            <Settings size={16} />
             Circuit Manager
           </button>
         </div>
 
         {/* Example Circuits */}
-        <div className="mb-6" data-oid="lieerdc">
+        <div className="mb-6">
           <h3
             className="text-lg font-semibold text-gray-800 mb-3"
-            data-oid="wsll:hl"
           >
             Example Circuits
           </h3>
-          <div className="flex flex-wrap gap-2" data-oid="jhgwl92">
+          <div className="flex flex-wrap gap-2">
             <button
               onClick={() => loadExampleCircuit("bell")}
               className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-              data-oid="_k1_n3_"
             >
               Bell State
             </button>
             <button
               onClick={() => loadExampleCircuit("ghz")}
               className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-              data-oid="bpamn0j"
             >
               GHZ State
             </button>
             <button
               onClick={() => loadExampleCircuit("superposition")}
               className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-              data-oid="vhodqpp"
             >
               Superposition
             </button>
             <button
               onClick={() => loadExampleCircuit("quantumFourier")}
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-              data-oid="pexprjz"
             >
               Quantum Fourier
             </button>
             <button
               onClick={() => loadExampleCircuit("toffoli")}
               className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-              data-oid="881rb31"
             >
               Toffoli Gate
             </button>
             <button
               onClick={() => loadExampleCircuit("phaseEstimation")}
               className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-              data-oid="vgwpl3u"
             >
               Phase Estimation
             </button>
@@ -352,48 +337,42 @@ export const QuantumSimulatorPage: React.FC = () => {
         {showCircuitManager && (
           <div
             className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-            data-oid="56x6xsa"
           >
             <div
               className="bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[80vh] overflow-hidden"
-              data-oid="zee0_._"
             >
-              <div className="bg-blue-500 text-white p-4" data-oid="x51trqq">
-                <h3 className="text-xl font-bold" data-oid="qbogq0w">
+              <div className="bg-blue-500 text-white p-4">
+                <h3 className="text-xl font-bold">
                   Circuit Manager
                 </h3>
               </div>
 
               <div
                 className="p-6 overflow-y-auto max-h-[60vh]"
-                data-oid="kqm9r.4"
               >
-                <div className="mb-4" data-oid="4oh5j78">
-                  <h4 className="font-semibold mb-2" data-oid="0ptxucv">
+                <div className="mb-4">
+                  <h4 className="font-semibold mb-2">
                     Save Current Circuit
                   </h4>
                   <button
                     onClick={saveCircuit}
                     className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                    data-oid="uuqqbpp"
                   >
                     Save Circuit
                   </button>
                 </div>
 
-                <div className="mb-4" data-oid="a6k88om">
-                  <h4 className="font-semibold mb-2" data-oid="5guz8cw">
+                <div className="mb-4">
+                  <h4 className="font-semibold mb-2">
                     Import/Export
                   </h4>
-                  <div className="flex gap-2" data-oid="bn8uf:k">
+                  <div className="flex gap-2">
                     <label
                       className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-colors cursor-pointer"
-                      data-oid="za3nw-a"
                     >
                       <Upload
                         size={16}
                         className="inline mr-1"
-                        data-oid="0tq8tnq"
                       />
                       Import JSON
                       <input
@@ -401,56 +380,50 @@ export const QuantumSimulatorPage: React.FC = () => {
                         accept=".json"
                         onChange={importCircuit}
                         className="hidden"
-                        data-oid="__lyx1_"
                       />
                     </label>
                     <button
                       onClick={() => exportCircuit("json")}
                       className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center gap-1"
-                      data-oid="5:o58.i"
                     >
-                      <Download size={16} data-oid="_uoy7lv" />
+                      <Download size={16} />
                       Export JSON
                     </button>
                     <button
                       onClick={() => exportCircuit("qasm")}
                       className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center gap-1"
-                      data-oid="sk.r:es"
                     >
-                      <Download size={16} data-oid="qxidf7k" />
+                      <Download size={16} />
                       Export QASM
                     </button>
                   </div>
                 </div>
 
-                <div data-oid="yi.6hm0">
-                  <h4 className="font-semibold mb-2" data-oid=":9c1lg1">
+                <div>
+                  <h4 className="font-semibold mb-2">
                     Saved Circuits
                   </h4>
                   {savedCircuits.length === 0 ? (
-                    <p className="text-gray-500" data-oid="a._vu0y">
+                    <p className="text-gray-500">
                       No saved circuits
                     </p>
                   ) : (
-                    <div className="space-y-2" data-oid="s52sz3_">
+                    <div className="space-y-2">
                       {savedCircuits.map((circuit) => (
                         <div
                           key={circuit.id}
                           className="p-3 border rounded-lg hover:bg-gray-50 cursor-pointer"
                           onClick={() => loadCircuit(circuit)}
-                          data-oid="qimki2e"
                         >
                           <div
                             className="flex justify-between items-center"
-                            data-oid="u7lbfj1"
                           >
-                            <div data-oid="4q:tg1z">
-                              <h5 className="font-medium" data-oid="8yvyu40">
+                            <div>
+                              <h5 className="font-medium">
                                 {circuit.name}
                               </h5>
                               <p
                                 className="text-sm text-gray-600"
-                                data-oid="sx_r:1q"
                               >
                                 {circuit.qubits} qubits, {circuit.gates.length}{" "}
                                 gates
@@ -465,7 +438,6 @@ export const QuantumSimulatorPage: React.FC = () => {
                                 );
                               }}
                               className="text-red-500 hover:text-red-700"
-                              data-oid="3_dra54"
                             >
                               Delete
                             </button>
@@ -477,11 +449,10 @@ export const QuantumSimulatorPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-50 p-4 border-t" data-oid="6pnj44x">
+              <div className="bg-gray-50 p-4 border-t">
                 <button
                   onClick={() => setShowCircuitManager(false)}
                   className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors"
-                  data-oid="0l9s1pz"
                 >
                   Close
                 </button>
@@ -494,55 +465,48 @@ export const QuantumSimulatorPage: React.FC = () => {
         <ErrorDisplay
           errors={errors}
           onClear={clearErrors}
-          data-oid="kzdx9nn"
         />
 
         {/* Simulation Error */}
         {simulationError && (
           <div
             className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
-            data-oid="v1p_md2"
           >
-            <div className="flex items-center gap-2" data-oid="2c1k5vs">
-              <span className="font-semibold" data-oid=".yqhavh">
+            <div className="flex items-center gap-2">
+              <span className="font-semibold">
                 Simulation Error:
               </span>
-              <span data-oid="dbzfwai">{simulationError}</span>
+              <span>{simulationError}</span>
             </div>
           </div>
         )}
 
         <div
           className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-          data-oid="cnh609."
         >
-          <div data-oid="d4.qm_a">
+          <div>
             <CircuitEditor
               qubits={qubits}
               gates={gates}
               onQubitChange={setQubits}
               onGatesChange={setGates}
-              data-oid="6p714.2"
             />
           </div>
 
-          <div className="space-y-6" data-oid="2zw-dw6">
+          <div className="space-y-6">
             <div
               className="bg-white rounded-lg shadow-lg p-6 simulation-controls"
-              data-oid="nkae5mz"
             >
               <h3
                 className="text-xl font-bold text-gray-800 mb-4"
-                data-oid="-6s12jr"
               >
                 Simulation Controls
               </h3>
 
-              <div className="space-y-4" data-oid="8j2eqj6">
-                <div data-oid="ecpm0-y">
+              <div className="space-y-4">
+                <div>
                   <label
                     className="block text-sm font-medium text-gray-700 mb-2"
-                    data-oid="k031vw3"
                   >
                     Simulation Type
                   </label>
@@ -552,22 +516,20 @@ export const QuantumSimulatorPage: React.FC = () => {
                       setSimulationType(e.target.value as "exact" | "sampling")
                     }
                     className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    data-oid="m97i3c_"
                   >
-                    <option value="sampling" data-oid="u7x6xrt">
+                    <option value="sampling">
                       Sampling (Multiple Measurements)
                     </option>
-                    <option value="exact" data-oid="onxiize">
+                    <option value="exact">
                       Exact (State Vector)
                     </option>
                   </select>
                 </div>
 
                 {simulationType === "sampling" && (
-                  <div data-oid="8-n-ma-">
+                  <div>
                     <label
                       className="block text-sm font-medium text-gray-700 mb-2"
-                      data-oid="bl8df8d"
                     >
                       Number of Shots
                     </label>
@@ -582,7 +544,6 @@ export const QuantumSimulatorPage: React.FC = () => {
                       min="100"
                       max="10000"
                       className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      data-oid="_lzoo7h"
                     />
                   </div>
                 )}
@@ -593,13 +554,11 @@ export const QuantumSimulatorPage: React.FC = () => {
                     isSimulating || errors.some((e) => e.type === "error")
                   }
                   className="w-full bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
-                  data-oid="k1ki91-"
                 >
                   {isSimulating ? (
                     <>
                       <div
                         className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"
-                        data-oid="e6.k2ft"
                       ></div>
                       Running Simulation...
                     </>
@@ -618,7 +577,6 @@ export const QuantumSimulatorPage: React.FC = () => {
                     ? "Exact Probabilities"
                     : "Measurement Results"
                 }
-                data-oid="wtfeb-b"
               />
             )}
           </div>
@@ -630,7 +588,6 @@ export const QuantumSimulatorPage: React.FC = () => {
           qubits={qubits}
           results={results}
           isVisible={show3D}
-          data-oid="5ta5.9g"
         />
 
         {/* Interactive Tutorial */}
@@ -643,7 +600,6 @@ export const QuantumSimulatorPage: React.FC = () => {
             setResults(null);
             setSimulationError(null);
           }}
-          data-oid="9sr1w9u"
         />
       </div>
     </div>
