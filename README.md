@@ -53,6 +53,13 @@ pnpm run preview
 # Run linting | تشغيل فحص الكود
 pnpm run lint
 ```
+## 🧪 Testing | الاختبارات
+
+Run tests with Jest:
+
+```bash
+pnpm run test
+```
 
 ## 🌐 Deployment | النشر
 
