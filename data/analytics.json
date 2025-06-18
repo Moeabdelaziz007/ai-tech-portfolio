@@ -1,0 +1,48 @@
+{
+  "overview": {
+    "totalVisitors": 12547,
+    "pageViews": 34892,
+    "averageSessionDuration": "3m 42s",
+    "bounceRate": "28%",
+    "topProjects": [
+      {"name": "AI Analytics Dashboard", "views": 8934},
+      {"name": "Quantum Simulator", "views": 6721},
+      {"name": "Blockchain Bot", "views": 4556},
+      {"name": "Neural Network Visualizer", "views": 3102}
+    ]
+  },
+  "visitorsThisWeek": [
+    {"day": "Mon", "visitors": 156, "pageViews": 342},
+    {"day": "Tue", "visitors": 189, "pageViews": 398},
+    {"day": "Wed", "visitors": 234, "pageViews": 456},
+    {"day": "Thu", "visitors": 178, "pageViews": 389},
+    {"day": "Fri", "visitors": 267, "pageViews": 523},
+    {"day": "Sat", "visitors": 145, "pageViews": 298},
+    {"day": "Sun", "visitors": 123, "pageViews": 267}
+  ],
+  "geographicData": [
+    {"country": "United States", "visitors": 4234, "percentage": 33.7},
+    {"country": "Germany", "visitors": 2156, "percentage": 17.2},
+    {"country": "United Kingdom", "visitors": 1876, "percentage": 14.9},
+    {"country": "Canada", "visitors": 1432, "percentage": 11.4},
+    {"country": "Japan", "visitors": 1089, "percentage": 8.7},
+    {"country": "Others", "visitors": 1760, "percentage": 14.1}
+  ],
+  "deviceData": [
+    {"device": "Desktop", "users": 7845, "percentage": 62.5},
+    {"device": "Mobile", "users": 3567, "percentage": 28.4},
+    {"device": "Tablet", "users": 1135, "percentage": 9.1}
+  ],
+  "cryptoPrices": [
+    {"symbol": "BTC", "price": 67234.56, "change": 2.34},
+    {"symbol": "ETH", "price": 3456.78, "change": -1.23},
+    {"symbol": "ADA", "price": 0.45, "change": 5.67},
+    {"symbol": "SOL", "price": 156.89, "change": 3.45}
+  ],
+  "techMetrics": [
+    {"metric": "API Response Time", "value": "142ms", "status": "good"},
+    {"metric": "Page Load Speed", "value": "1.8s", "status": "excellent"},
+    {"metric": "Core Web Vitals", "value": "98/100", "status": "excellent"},
+    {"metric": "Uptime", "value": "99.9%", "status": "excellent"}
+  ]
+}
