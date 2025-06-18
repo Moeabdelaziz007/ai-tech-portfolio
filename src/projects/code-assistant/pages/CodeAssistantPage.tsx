@@ -55,27 +55,24 @@ export const CodeAssistantPage: React.FC = () => {
   return (
     <div
       className="min-h-screen bg-dark-bg text-tech-white p-6"
-      data-oid="3l5i1c1"
     >
       <button
         onClick={() => navigate("/")}
         className="flex items-center gap-2 mb-6 bg-white text-dark-bg px-4 py-2 rounded shadow hover:bg-gray-200"
-        data-oid="x8nmgxn"
       >
-        <ArrowLeft size={18} data-oid="66_6bhh" />
+        <ArrowLeft size={18} />
         Back
       </button>
-      <h1 className="text-3xl font-bold mb-6" data-oid="pj1pyyd">
+      <h1 className="text-3xl font-bold mb-6">
         AI Code Assistant
       </h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8" data-oid="sgw:01t">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Editor & controls */}
-        <div className="lg:col-span-2" data-oid="2aakuzz">
+        <div className="lg:col-span-2">
           <ModelSelector
             selectedModel={selectedModel}
             onModelChange={setSelectedModel}
-            data-oid="_ja9y4l"
           />
 
           <CodeEditor
@@ -83,41 +80,37 @@ export const CodeAssistantPage: React.FC = () => {
             onCodeChange={handleCodeChange}
             onCompletion={handleCompletion}
             selectedModel={selectedModel}
-            data-oid="xph.ihl"
           />
 
           <div
             className="flex justify-between items-center mt-4"
-            data-oid="7gqxi_7"
           >
             <select
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
               className="border border-gray-600 bg-dark-bg px-3 py-2 rounded"
-              data-oid="cqqxav2"
             >
-              <option value="javascript" data-oid="bd7l5j2">
+              <option value="javascript">
                 JavaScript
               </option>
-              <option value="typescript" data-oid="uzhiym4">
+              <option value="typescript">
                 TypeScript
               </option>
-              <option value="python" data-oid="viu5uqj">
+              <option value="python">
                 Python
               </option>
             </select>
 
-            <div className="flex gap-2" data-oid="gyz0y6d">
+            <div className="flex gap-2">
               <button
                 onClick={() => generateExplanation(code)}
                 disabled={isGenerating}
                 className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2 disabled:opacity-50"
-                data-oid="s3.jfwk"
               >
                 {isGenerating ? (
-                  <BeatLoader color="#fff" size={8} data-oid="aabaq71" />
+                  <BeatLoader color="#fff" size={8} />
                 ) : (
-                  <FaBrain data-oid="e7:uf5." />
+                  <FaBrain />
                 )}
                 Explain Code
               </button>
@@ -125,7 +118,6 @@ export const CodeAssistantPage: React.FC = () => {
               <RefactorButton
                 code={code}
                 onRefactor={handleRefactor}
-                data-oid="r3q787r"
               />
             </div>
           </div>
@@ -134,47 +126,42 @@ export const CodeAssistantPage: React.FC = () => {
             <CompletionStats
               completions={completions}
               latency={latency}
-              data-oid="13bfd54"
             />
           )}
         </div>
 
         {/* Assistant panel */}
-        <div className="lg:col-span-1" data-oid="3yyysnx">
+        <div className="lg:col-span-1">
           <div
             className="bg-gray-900 p-4 rounded h-full overflow-y-auto"
-            data-oid="f43:qey"
           >
-            <h3 className="font-bold mb-4 text-neon-green" data-oid="bevx_7c">
+            <h3 className="font-bold mb-4 text-neon-green">
               AI Assistant
             </h3>
             {explanation ? (
               <ReactMarkdown
                 className="prose prose-invert max-w-none"
-                data-oid="_w82269"
               >
                 {explanation}
               </ReactMarkdown>
             ) : (
-              <p className="text-gray-400" data-oid="e9ye5:3">
+              <p className="text-gray-400">
                 Code analysis will appear here...
               </p>
             )}
 
             {completions.length > 0 && (
-              <div className="mt-6" data-oid="72o9_56">
+              <div className="mt-6">
                 <h4
                   className="font-medium mb-2 text-neon-green"
-                  data-oid="d0:3xm7"
                 >
                   Suggested Completions
                 </h4>
                 <ul
                   className="list-disc list-inside space-y-1 text-sm"
-                  data-oid="mb9k0t3"
                 >
                   {completions.map((c, i) => (
-                    <li key={i} data-oid="rt06y4c">
+                    <li key={i}>
                       {c.label}
                     </li>
                   ))}

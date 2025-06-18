@@ -26,7 +26,6 @@ const SheetOverlay = React.forwardRef<
     )}
     {...props}
     ref={ref}
-    data-oid="_21.2xs"
   />
 ));
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
@@ -58,20 +57,18 @@ const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
 >(({ side = "right", className, children, ...props }, ref) => (
-  <SheetPortal data-oid="rawviuo">
-    <SheetOverlay data-oid="zrzar3_" />
+  <SheetPortal>
+    <SheetOverlay />
     <SheetPrimitive.Content
       ref={ref}
       className={cn(sheetVariants({ side }), className)}
       {...props}
-      data-oid="3zz2yrb"
     >
       <SheetPrimitive.Close
         className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-zinc-100 dark:ring-offset-zinc-950 dark:focus:ring-zinc-300 dark:data-[state=open]:bg-zinc-800"
-        data-oid="a09490k"
       >
-        <X className="h-4 w-4" data-oid="jxziwmp" />
-        <span className="sr-only" data-oid="srsgl6i">
+        <X className="h-4 w-4" />
+        <span className="sr-only">
           Close
         </span>
       </SheetPrimitive.Close>
@@ -91,7 +88,6 @@ const SheetHeader = ({
       className,
     )}
     {...props}
-    data-oid="hz1.341"
   />
 );
 
@@ -107,7 +103,6 @@ const SheetFooter = ({
       className,
     )}
     {...props}
-    data-oid="g1_46.."
   />
 );
 
@@ -124,7 +119,6 @@ const SheetTitle = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="w6jkdio"
   />
 ));
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
@@ -137,7 +131,6 @@ const SheetDescription = React.forwardRef<
     ref={ref}
     className={cn("text-sm text-zinc-500 dark:text-zinc-400", className)}
     {...props}
-    data-oid="t05me0j"
   />
 ));
 SheetDescription.displayName = SheetPrimitive.Description.displayName;

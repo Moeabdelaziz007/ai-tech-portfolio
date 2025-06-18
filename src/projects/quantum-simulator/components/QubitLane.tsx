@@ -17,33 +17,33 @@ import { Gate, GateType, QubitLaneProps, GateComponentProps } from "../types";
 
 // Gate Icons Mapping
 const GATE_ICONS: Record<GateType, JSX.Element> = {
-  X: <FaTimes className="text-red-500 text-xl" data-oid="v8jnjg0" />,
-  Y: <FaCaretUp className="text-yellow-500 text-xl" data-oid="kk2m:m0" />,
-  Z: <FaCaretDown className="text-blue-500 text-xl" data-oid="qzmarhf" />,
-  H: <FaWaveSquare className="text-green-500 text-xl" data-oid="h3f_p0_" />,
-  CNOT: <FaLink className="text-purple-500 text-xl" data-oid="ju6pijr" />,
+  X: <FaTimes className="text-red-500 text-xl" />,
+  Y: <FaCaretUp className="text-yellow-500 text-xl" />,
+  Z: <FaCaretDown className="text-blue-500 text-xl" />,
+  H: <FaWaveSquare className="text-green-500 text-xl" />,
+  CNOT: <FaLink className="text-purple-500 text-xl" />,
   SWAP: (
-    <FaExchangeAlt className="text-orange-500 text-xl" data-oid="rra2xuv" />
+    <FaExchangeAlt className="text-orange-500 text-xl" />
   ),
 
-  CZ: <FaPlusSquare className="text-teal-500 text-xl" data-oid="e.w-:qt" />,
-  CX: <FaLink className="text-indigo-500 text-xl" data-oid="891_soc" />,
-  S: <FaClock className="text-cyan-500 text-xl" data-oid="kqff9bw" />,
-  T: <FaStopwatch className="text-pink-500 text-xl" data-oid="bu-jckw" />,
-  Sdg: <FaClock className="text-cyan-500 text-xl" data-oid="f73tns1" />,
-  Tdg: <FaStopwatch className="text-pink-500 text-xl" data-oid="kzjvvg7" />,
-  RX: <FaRoute className="text-red-500 text-xl" data-oid="vnq.k.n" />,
-  RY: <FaRoute className="text-yellow-500 text-xl" data-oid=".02tb_d" />,
-  RZ: <FaRoute className="text-blue-500 text-xl" data-oid=":rydnxq" />,
-  CRX: <FaLink className="text-red-500 text-xl" data-oid="57u.uta" />,
-  CRY: <FaLink className="text-yellow-500 text-xl" data-oid="8i41ne5" />,
-  CRZ: <FaLink className="text-blue-500 text-xl" data-oid="_b6fovu" />,
-  CCX: <FaBolt className="text-purple-500 text-xl" data-oid="un_6u-g" />,
-  CCZ: <FaBolt className="text-teal-500 text-xl" data-oid=":ltzle_" />,
-  CSWAP: <FaBolt className="text-orange-500 text-xl" data-oid="uoq.zcd" />,
-  U1: <FaSquare className="text-gray-500 text-xl" data-oid="mq96sis" />,
-  U2: <FaSquare className="text-gray-600 text-xl" data-oid="piwgrs4" />,
-  U3: <FaSquare className="text-gray-700 text-xl" data-oid="7.gxd_v" />,
+  CZ: <FaPlusSquare className="text-teal-500 text-xl" />,
+  CX: <FaLink className="text-indigo-500 text-xl" />,
+  S: <FaClock className="text-cyan-500 text-xl" />,
+  T: <FaStopwatch className="text-pink-500 text-xl" />,
+  Sdg: <FaClock className="text-cyan-500 text-xl" />,
+  Tdg: <FaStopwatch className="text-pink-500 text-xl" />,
+  RX: <FaRoute className="text-red-500 text-xl" />,
+  RY: <FaRoute className="text-yellow-500 text-xl" />,
+  RZ: <FaRoute className="text-blue-500 text-xl" />,
+  CRX: <FaLink className="text-red-500 text-xl" />,
+  CRY: <FaLink className="text-yellow-500 text-xl" />,
+  CRZ: <FaLink className="text-blue-500 text-xl" />,
+  CCX: <FaBolt className="text-purple-500 text-xl" />,
+  CCZ: <FaBolt className="text-teal-500 text-xl" />,
+  CSWAP: <FaBolt className="text-orange-500 text-xl" />,
+  U1: <FaSquare className="text-gray-500 text-xl" />,
+  U2: <FaSquare className="text-gray-600 text-xl" />,
+  U3: <FaSquare className="text-gray-700 text-xl" />,
 };
 
 // Gate Tooltips Mapping
@@ -103,7 +103,6 @@ const GateComponent: React.FC<GateComponentProps> = ({ gate, onRemove }) => {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       title={`${GATE_TOOLTIPS[gate.type]} - Click to remove`}
-      data-oid="jj5eiyd"
     >
       {GATE_ICONS[gate.type]}
     </div>
@@ -169,100 +168,97 @@ export const QubitLane: React.FC<QubitLaneProps> = ({
   return (
     <div
       className="flex items-center h-16 border-b border-gray-300 relative qubit-lane"
-      data-oid="i3t66_e"
     >
       {/* Qubit label with icon */}
       <div
         className="w-20 text-center font-mono text-sm text-gray-600 flex items-center justify-center"
-        data-oid=":tfzatx"
       >
-        <FaSquare className="text-blue-500 mr-2" data-oid="_i.60_7" />
-        <span className="hidden sm:inline" data-oid="nyr2ex-">
+        <FaSquare className="text-blue-500 mr-2" />
+        <span className="hidden sm:inline">
           q[{qubitIndex}]
         </span>
-        <span className="sm:hidden" data-oid="ff945ke">
+        <span className="sm:hidden">
           q{qubitIndex}
         </span>
       </div>
 
       {/* Gate type selector */}
-      <div className="w-24 px-2 gate-selector" data-oid="60:c_lb">
+      <div className="w-24 px-2 gate-selector">
         <select
           value={selectedGateType}
           onChange={(e) => setSelectedGateType(e.target.value as GateType)}
           className="w-full text-xs p-1 border rounded bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent focus-ring"
-          data-oid="6rrjr-g"
         >
-          <option value="X" data-oid="g8zsxtq">
+          <option value="X">
             X (NOT)
           </option>
-          <option value="Y" data-oid="qnnhjrb">
+          <option value="Y">
             Y
           </option>
-          <option value="Z" data-oid="lg31acc">
+          <option value="Z">
             Z
           </option>
-          <option value="H" data-oid="pzyffi7">
+          <option value="H">
             H (Hadamard)
           </option>
-          <option value="CNOT" data-oid="00zxgf:">
+          <option value="CNOT">
             CNOT
           </option>
-          <option value="SWAP" data-oid="f2jqsrz">
+          <option value="SWAP">
             SWAP
           </option>
-          <option value="CZ" data-oid="6y77_xc">
+          <option value="CZ">
             CZ
           </option>
-          <option value="CX" data-oid="wn.s.xf">
+          <option value="CX">
             CX
           </option>
-          <option value="S" data-oid="8-2jfju">
+          <option value="S">
             S
           </option>
-          <option value="T" data-oid="i3iy_35">
+          <option value="T">
             T
           </option>
-          <option value="Sdg" data-oid="..u15rt">
+          <option value="Sdg">
             Sdg
           </option>
-          <option value="Tdg" data-oid="3u0bvaa">
+          <option value="Tdg">
             Tdg
           </option>
-          <option value="RX" data-oid="5pm2949">
+          <option value="RX">
             RX
           </option>
-          <option value="RY" data-oid="k3ygxky">
+          <option value="RY">
             RY
           </option>
-          <option value="RZ" data-oid="v:20vv4">
+          <option value="RZ">
             RZ
           </option>
-          <option value="CRX" data-oid="ndvtzq5">
+          <option value="CRX">
             CRX
           </option>
-          <option value="CRY" data-oid="-ei40xh">
+          <option value="CRY">
             CRY
           </option>
-          <option value="CRZ" data-oid="i.ldd09">
+          <option value="CRZ">
             CRZ
           </option>
-          <option value="CCX" data-oid="mdw:dx2">
+          <option value="CCX">
             CCX
           </option>
-          <option value="CCZ" data-oid="oe0a01t">
+          <option value="CCZ">
             CCZ
           </option>
-          <option value="CSWAP" data-oid="wop562a">
+          <option value="CSWAP">
             CSWAP
           </option>
-          <option value="U1" data-oid="hst227z">
+          <option value="U1">
             U1
           </option>
-          <option value="U2" data-oid="zd6f9mi">
+          <option value="U2">
             U2
           </option>
-          <option value="U3" data-oid="0jqu-jf">
+          <option value="U3">
             U3
           </option>
         </select>
@@ -274,7 +270,6 @@ export const QubitLane: React.FC<QubitLaneProps> = ({
         onClick={handleLaneClick}
         onTouchStart={handleLaneTouch}
         title="Click or tap to add gate"
-        data-oid="3oeoihd"
       >
         {/* Step markers */}
         {Array.from({ length: maxSteps }).map((_, i) => (
@@ -282,7 +277,6 @@ export const QubitLane: React.FC<QubitLaneProps> = ({
             key={i}
             className="absolute w-1 h-8 bg-gray-300"
             style={{ left: `${i * 60 + 20}px` }}
-            data-oid="ycsd3p7"
           />
         ))}
 
@@ -292,7 +286,6 @@ export const QubitLane: React.FC<QubitLaneProps> = ({
             key={gate.id}
             gate={gate}
             onRemove={() => handleGateRemove(index)}
-            data-oid="znnjt1s"
           />
         ))}
       </div>

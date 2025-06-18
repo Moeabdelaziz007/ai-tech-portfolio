@@ -16,10 +16,9 @@ const NavigationMenu = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="1:9oomj"
   >
     {children}
-    <NavigationMenuViewport data-oid="aahadm_" />
+    <NavigationMenuViewport />
   </NavigationMenuPrimitive.Root>
 ));
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
@@ -35,7 +34,6 @@ const NavigationMenuList = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="iqxo_e9"
   />
 ));
 NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
@@ -54,14 +52,12 @@ const NavigationMenuTrigger = React.forwardRef<
     ref={ref}
     className={cn(navigationMenuTriggerStyle(), "group", className)}
     {...props}
-    data-oid="hl-uu15"
   >
     {children}
     {""}
     <ChevronDown
       className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
       aria-hidden="true"
-      data-oid="et2-jt4"
     />
   </NavigationMenuPrimitive.Trigger>
 ));
@@ -78,7 +74,6 @@ const NavigationMenuContent = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="wdc8_:i"
   />
 ));
 NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName;
@@ -91,7 +86,6 @@ const NavigationMenuViewport = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     className={cn("absolute left-0 top-full flex justify-center")}
-    data-oid="ics3go2"
   >
     <NavigationMenuPrimitive.Viewport
       className={cn(
@@ -100,7 +94,6 @@ const NavigationMenuViewport = React.forwardRef<
       )}
       ref={ref}
       {...props}
-      data-oid="o0lrtce"
     />
   </div>
 ));
@@ -118,11 +111,9 @@ const NavigationMenuIndicator = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="jg5-n4v"
   >
     <div
       className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-zinc-200 shadow-md dark:bg-zinc-800"
-      data-oid=":-_brf0"
     />
   </NavigationMenuPrimitive.Indicator>
 ));

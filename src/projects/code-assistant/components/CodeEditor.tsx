@@ -131,7 +131,6 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
     <div
       ref={containerRef}
       className="h-96 border border-gray-700 rounded"
-      data-oid="b:.49hj"
     />
   );
 };

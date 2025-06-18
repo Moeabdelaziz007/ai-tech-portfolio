@@ -230,125 +230,111 @@ export const InteractiveTutorial: React.FC<InteractiveTutorialProps> = ({
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-      data-oid="ke6q4t:"
     >
       <div
         className="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-hidden"
-        data-oid="e44ccq3"
       >
         {/* Header */}
         <div
           className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6"
-          data-oid="iqf1:_n"
         >
-          <div className="flex justify-between items-center" data-oid=":x5c6ql">
-            <h2 className="text-2xl font-bold" data-oid="fx_0oxg">
+          <div className="flex justify-between items-center">
+            <h2 className="text-2xl font-bold">
               Interactive Quantum Computing Tutorial
             </h2>
             <button
               onClick={onClose}
               className="text-white hover:text-gray-200 transition-colors"
-              data-oid="j__gvm6"
             >
-              <FaTimes size={24} data-oid=".ef1ohc" />
+              <FaTimes size={24} />
             </button>
           </div>
 
           {/* Progress Bar */}
-          <div className="mt-4" data-oid="qn:ow_0">
+          <div className="mt-4">
             <div
               className="flex justify-between text-sm mb-2"
-              data-oid="m.faooj"
             >
-              <span data-oid="z3ack68">
+              <span>
                 Step {currentStep + 1} of {TUTORIAL_STEPS.length}
               </span>
-              <span data-oid="jkkkkmi">{Math.round(progress)}% Complete</span>
+              <span>{Math.round(progress)}% Complete</span>
             </div>
             <div
               className="w-full bg-white bg-opacity-20 rounded-full h-2"
-              data-oid="xpqqf.7"
             >
               <div
                 className="bg-white h-2 rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}
-                data-oid="h:xylc3"
               />
             </div>
           </div>
         </div>
 
         {/* Content */}
-        <div className="p-6 overflow-y-auto max-h-[60vh]" data-oid="jdjn4l3">
+        <div className="p-6 overflow-y-auto max-h-[60vh]">
           {/* Step Title and Description */}
-          <div className="mb-6" data-oid="5onszgz">
+          <div className="mb-6">
             <h3
               className="text-xl font-bold text-gray-800 mb-2"
-              data-oid="32ftvw:"
             >
               {currentTutorial.title}
               {isCompleted && (
                 <FaCheck
                   className="inline ml-2 text-green-500"
-                  data-oid="hqivhs3"
                 />
               )}
             </h3>
-            <p className="text-gray-600" data-oid="9rccgj_">
+            <p className="text-gray-600">
               {currentTutorial.description}
             </p>
           </div>
 
           {/* Circuit Preview */}
-          <div className="mb-6 p-4 bg-gray-50 rounded-lg" data-oid="wxa.d1t">
-            <h4 className="font-semibold text-gray-800 mb-2" data-oid=":w:6o78">
+          <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+            <h4 className="font-semibold text-gray-800 mb-2">
               Circuit Preview:
             </h4>
-            <div className="text-sm text-gray-600 mb-3" data-oid="czxshbs">
-              <p data-oid="b3zef3e">
-                <strong data-oid="q3btrjb">Qubits:</strong>{" "}
+            <div className="text-sm text-gray-600 mb-3">
+              <p>
+                <strong>Qubits:</strong>{" "}
                 {currentTutorial.qubits}
               </p>
-              <p data-oid="rh7j3hf">
-                <strong data-oid="jyt5297">Gates:</strong>{" "}
+              <p>
+                <strong>Gates:</strong>{" "}
                 {currentTutorial.circuit.length}
               </p>
             </div>
             <button
               onClick={loadCurrentCircuit}
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors"
-              data-oid="q0.7eyb"
             >
               Load This Circuit
             </button>
           </div>
 
           {/* Hints */}
-          <div className="mb-6" data-oid="m0yvw-e">
+          <div className="mb-6">
             <button
               onClick={() => setShowHints(!showHints)}
               className="text-blue-600 hover:text-blue-800 font-medium mb-2"
-              data-oid="9n-fqkh"
             >
               {showHints ? "Hide Hints" : "Show Hints"}
             </button>
             {showHints && (
               <div
                 className="bg-yellow-50 border border-yellow-200 rounded-lg p-4"
-                data-oid="gjw:alh"
               >
                 <h4
                   className="font-semibold text-yellow-800 mb-2"
-                  data-oid="uuvtmg_"
                 >
                   Hints:
                 </h4>
                 <ul
                   className="list-disc list-inside space-y-1 text-yellow-700"
-                  data-oid="w2mp_cm"
                 >
                   {currentTutorial.hints.map((hint, index) => (
-                    <li key={index} data-oid="leyh.:4">
+                    <li key={index}>
                       {hint}
                     </li>
                   ))}
@@ -358,43 +344,39 @@ export const InteractiveTutorial: React.FC<InteractiveTutorialProps> = ({
           </div>
 
           {/* Explanation */}
-          <div className="mb-6" data-oid="_4j78kv">
-            <h4 className="font-semibold text-gray-800 mb-2" data-oid="d6kv66b">
+          <div className="mb-6">
+            <h4 className="font-semibold text-gray-800 mb-2">
               Explanation:
             </h4>
-            <p className="text-gray-600 leading-relaxed" data-oid="8-zherd">
+            <p className="text-gray-600 leading-relaxed">
               {currentTutorial.explanation}
             </p>
           </div>
 
           {/* Expected Results */}
           {currentTutorial.expectedResult && (
-            <div className="mb-6" data-oid="f:wet0c">
+            <div className="mb-6">
               <h4
                 className="font-semibold text-gray-800 mb-2"
-                data-oid="j5:xrfg"
               >
                 Expected Results:
               </h4>
               <div
                 className="bg-green-50 border border-green-200 rounded-lg p-4"
-                data-oid="v0l::vu"
               >
                 <div
                   className="grid grid-cols-2 gap-4 text-sm"
-                  data-oid="mkqj4_m"
                 >
                   {Object.entries(currentTutorial.expectedResult).map(
                     ([state, prob]) => (
                       <div
                         key={state}
                         className="flex justify-between"
-                        data-oid="5:lmn2h"
                       >
-                        <span className="font-mono" data-oid="owrye0q">
+                        <span className="font-mono">
                           |{state}⟩
                         </span>
-                        <span data-oid="j-pv01f">
+                        <span>
                           {(prob * 100).toFixed(1)}%
                         </span>
                       </div>
@@ -407,58 +389,53 @@ export const InteractiveTutorial: React.FC<InteractiveTutorialProps> = ({
         </div>
 
         {/* Footer Controls */}
-        <div className="bg-gray-50 p-6 border-t" data-oid=".2iqqc4">
-          <div className="flex justify-between items-center" data-oid="5b6n1f9">
-            <div className="flex gap-2" data-oid="wg59:-l">
+        <div className="bg-gray-50 p-6 border-t">
+          <div className="flex justify-between items-center">
+            <div className="flex gap-2">
               <button
                 onClick={resetTutorial}
                 className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
-                data-oid="-dtnepo"
               >
-                <FaRedo size={16} data-oid="uoqgie3" />
+                <FaRedo size={16} />
                 Reset
               </button>
               <button
                 onClick={autoPlay}
                 disabled={isPlaying}
                 className="bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
-                data-oid="s-39res"
               >
                 {isPlaying ? (
-                  <FaPause size={16} data-oid="ddzfu_h" />
+                  <FaPause size={16} />
                 ) : (
-                  <FaPlay size={16} data-oid="1lhsbpb" />
+                  <FaPlay size={16} />
                 )}
                 {isPlaying ? "Playing..." : "Auto Play"}
               </button>
             </div>
 
-            <div className="flex gap-2" data-oid="7l3yg33">
+            <div className="flex gap-2">
               <button
                 onClick={prevStep}
                 disabled={currentStep === 0}
                 className="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
-                data-oid="qqtuu9w"
               >
-                <FaStepBackward size={16} data-oid="l66_9:h" />
+                <FaStepBackward size={16} />
                 Previous
               </button>
               <button
                 onClick={markCompleted}
                 className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
-                data-oid="6amyset"
               >
-                <FaCheck size={16} data-oid="8tbnfo8" />
+                <FaCheck size={16} />
                 Mark Complete
               </button>
               <button
                 onClick={nextStep}
                 disabled={currentStep === TUTORIAL_STEPS.length - 1}
                 className="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
-                data-oid="f7zcc6h"
               >
                 Next
-                <FaStepForward size={16} data-oid="_jik46a" />
+                <FaStepForward size={16} />
               </button>
             </div>
           </div>
