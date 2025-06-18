@@ -149,6 +149,7 @@ const ProjectsSection = () => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-60" />
@@ -267,6 +268,7 @@ const ProjectsSection = () => {
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
+                  loading="lazy"
                   className="w-full h-64 object-cover rounded-lg mb-6"
                 />
 

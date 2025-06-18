@@ -38,6 +38,7 @@ const HeroSection = () => {
         <img 
           src="/images/hero-background.jpg" 
           alt="AI Neural Network Background"
+          loading="lazy"
           className="w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/70 via-dark-bg/50 to-dark-bg" />
@@ -61,6 +62,7 @@ const HeroSection = () => {
               <img
                 src="/images/profile-avatar.jpg"
                 alt="Mohamed H. Abdelaziz"
+                loading="lazy"
                 className="w-full h-full rounded-full object-cover neon-border"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-neon-green/20 to-quantum-blue/20 animate-pulse-glow"></div>
