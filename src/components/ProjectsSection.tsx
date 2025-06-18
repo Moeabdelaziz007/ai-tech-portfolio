@@ -104,29 +104,26 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20 relative" data-oid="7xi-0v.">
-      <div className="container mx-auto px-4" ref={ref} data-oid="ui60kqe">
+    <section id="projects" className="py-20 relative">
+      <div className="container mx-auto px-4" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
-          data-oid="oo5qudg"
         >
           <h2
             className="text-4xl md:text-5xl font-bold mb-6"
-            data-oid="5b4pwvy"
           >
-            <span className="text-tech-white" data-oid="_19uzv3">
+            <span className="text-tech-white">
               Featured{" "}
             </span>
-            <span className="text-neon-green" data-oid="4y81t9t">
+            <span className="text-neon-green">
               Projects
             </span>
           </h2>
           <p
             className="text-xl text-medium-gray max-w-3xl mx-auto"
-            data-oid="x5hu4qh"
           >
             Innovative solutions at the intersection of AI, cybersecurity, and
             emerging technologies.
@@ -139,7 +136,6 @@ const ProjectsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
-          data-oid=":182_46"
         >
           {categories.map((category) => (
             <motion.button
@@ -152,16 +148,15 @@ const ProjectsSection = () => {
                   ? "bg-neon-green text-dark-bg shadow-lg shadow-neon-green/25"
                   : "glass-effect text-tech-white hover:text-neon-green border border-neon-green/20"
               }`}
-              data-oid="eqium5o"
             >
-              <Filter className="inline mr-2" size={16} data-oid="bc.xz28" />
+              <Filter className="inline mr-2" size={16} />
               {category}
             </motion.button>
           ))}
         </motion.div>
 
         {/* Projects Grid */}
-        <AnimatePresence mode="wait" data-oid="s5-wfxp">
+        <AnimatePresence mode="wait">
           <motion.div
             key={activeFilter}
             initial={{ opacity: 0 }}
@@ -169,7 +164,6 @@ const ProjectsSection = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            data-oid="vdc5pj7"
           >
             {filteredProjects.map((project, index) => (
               <motion.div
@@ -180,31 +174,26 @@ const ProjectsSection = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="glass-effect rounded-xl overflow-hidden group cursor-pointer"
                 onClick={() => handleProjectClick(project)}
-                data-oid="nwcfq:c"
               >
                 {/* Project Image */}
                 <div
                   className="relative h-48 overflow-hidden"
-                  data-oid="s.g.1e2"
                 >
                   <img
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    data-oid="t5juxdp"
                   />
 
                   <div
                     className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-60"
-                    data-oid="e390o43"
                   />
 
                   {/* Featured Badge */}
                   {project.featured && (
                     <div
                       className="absolute top-4 right-4 bg-neon-green text-dark-bg px-3 py-1 rounded-full text-sm font-semibold"
-                      data-oid="_g2irqe"
                     >
                       Featured
                     </div>
@@ -213,58 +202,50 @@ const ProjectsSection = () => {
                   {/* Hover Overlay */}
                   <div
                     className="absolute inset-0 bg-dark-bg/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                    data-oid="25tj.nh"
                   >
                     <Play
                       className="text-neon-green"
                       size={48}
-                      data-oid="46oh_u2"
                     />
                   </div>
                 </div>
 
                 {/* Project Info */}
-                <div className="p-6" data-oid="2b2g:9b">
+                <div className="p-6">
                   <div
                     className="flex items-center justify-between mb-3"
-                    data-oid="ouu_j-d"
                   >
                     <span
                       className="text-neon-green text-sm font-semibold"
-                      data-oid="nqpwlyi"
                     >
                       {project.category}
                     </span>
                     <span
                       className="text-medium-gray text-sm flex items-center"
-                      data-oid=".emsr.j"
                     >
-                      <Calendar size={14} className="mr-1" data-oid="yor4os0" />
+                      <Calendar size={14} className="mr-1" />
                       {project.completion}
                     </span>
                   </div>
 
                   <h3
                     className="text-xl font-bold text-tech-white mb-3 group-hover:text-neon-green transition-colors"
-                    data-oid=".zeg_fk"
                   >
                     {project.title}
                   </h3>
 
                   <p
                     className="text-medium-gray mb-4 line-clamp-3"
-                    data-oid="gw-5l3m"
                   >
                     {project.description}
                   </p>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4" data-oid="unz7w4_">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
                         className={`px-2 py-1 text-xs rounded-full text-white ${getTechColor(tech)}`}
-                        data-oid="ox7yi6k"
                       >
                         {tech}
                       </span>
@@ -272,7 +253,6 @@ const ProjectsSection = () => {
                     {project.technologies.length > 3 && (
                       <span
                         className="px-2 py-1 text-xs rounded-full bg-medium-gray text-white"
-                        data-oid="0h.:sax"
                       >
                         +{project.technologies.length - 3}
                       </span>
@@ -280,7 +260,7 @@ const ProjectsSection = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex space-x-3" data-oid="hnxo7i.">
+                  <div className="flex space-x-3">
                     <motion.button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -293,12 +273,10 @@ const ProjectsSection = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="flex-1 bg-neon-green text-dark-bg py-2 px-4 rounded-lg font-medium hover:bg-neon-green/90 transition-colors flex items-center justify-center text-sm"
-                      data-oid="r7tn-vh"
                     >
                       <ExternalLink
                         size={16}
                         className="mr-2"
-                        data-oid="-p4ov2g"
                       />
                       Demo
                     </motion.button>
@@ -310,9 +288,8 @@ const ProjectsSection = () => {
                       whileTap={{ scale: 0.95 }}
                       className="flex-1 border border-neon-green text-neon-green py-2 px-4 rounded-lg font-medium hover:bg-neon-green hover:text-dark-bg transition-colors flex items-center justify-center text-sm"
                       onClick={(e) => e.stopPropagation()}
-                      data-oid="ygvcohl"
                     >
-                      <Github size={16} className="mr-2" data-oid="n54qnk2" />
+                      <Github size={16} className="mr-2" />
                       Code
                     </motion.a>
                   </div>
@@ -323,7 +300,7 @@ const ProjectsSection = () => {
         </AnimatePresence>
 
         {/* Project Modal */}
-        <AnimatePresence data-oid="7okhu:5">
+        <AnimatePresence>
           {selectedProject && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -331,7 +308,6 @@ const ProjectsSection = () => {
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-bg/90 backdrop-blur-sm"
               onClick={() => setSelectedProject(null)}
-              data-oid="e-c4bht"
             >
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -339,22 +315,18 @@ const ProjectsSection = () => {
                 exit={{ scale: 0.8, opacity: 0 }}
                 className="bg-dark-bg border border-neon-green/20 rounded-xl p-8 max-w-4xl max-h-[90vh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
-                data-oid="jz5v0rw"
               >
                 <div
                   className="flex justify-between items-start mb-6"
-                  data-oid="w2gwv:t"
                 >
-                  <div data-oid="fv3_pph">
+                  <div>
                     <h3
                       className="text-3xl font-bold text-tech-white mb-2"
-                      data-oid="22pc3hu"
                     >
                       {selectedProject.title}
                     </h3>
                     <span
                       className="text-neon-green font-semibold"
-                      data-oid="f1w87v5"
                     >
                       {selectedProject.category}
                     </span>
@@ -362,9 +334,8 @@ const ProjectsSection = () => {
                   <button
                     onClick={() => setSelectedProject(null)}
                     className="text-medium-gray hover:text-tech-white transition-colors"
-                    data-oid="9xscn45"
                   >
-                    <X size={24} data-oid="6i1sj2o" />
+                    <X size={24} />
                   </button>
                 </div>
 
@@ -373,33 +344,28 @@ const ProjectsSection = () => {
                   alt={selectedProject.title}
                   loading="lazy"
                   className="w-full h-64 object-cover rounded-lg mb-6"
-                  data-oid="8diuy3c"
                 />
 
                 <p
                   className="text-medium-gray text-lg leading-relaxed mb-6"
-                  data-oid="gby.pnz"
                 >
                   {selectedProject.longDescription}
                 </p>
 
                 <div
                   className="grid md:grid-cols-2 gap-6 mb-6"
-                  data-oid="qhz5:yi"
                 >
-                  <div data-oid="1776qq-">
+                  <div>
                     <h4
                       className="text-lg font-semibold text-tech-white mb-3"
-                      data-oid="u5f2-wd"
                     >
                       Technologies Used
                     </h4>
-                    <div className="flex flex-wrap gap-2" data-oid="4einuil">
+                    <div className="flex flex-wrap gap-2">
                       {selectedProject.technologies.map((tech) => (
                         <span
                           key={tech}
                           className={`px-3 py-1 text-sm rounded-full text-white ${getTechColor(tech)}`}
-                          data-oid="b8mmo:b"
                         >
                           {tech}
                         </span>
@@ -407,21 +373,18 @@ const ProjectsSection = () => {
                     </div>
                   </div>
 
-                  <div data-oid="s2vdfh4">
+                  <div>
                     <h4
                       className="text-lg font-semibold text-tech-white mb-3"
-                      data-oid=":d:7.1z"
                     >
                       Impact
                     </h4>
                     <p
                       className="text-medium-gray flex items-start"
-                      data-oid="8ul6i3j"
                     >
                       <TrendingUp
                         className="text-neon-green mr-2 mt-1 flex-shrink-0"
                         size={16}
-                        data-oid="q_ho_wl"
                       />
 
                       {selectedProject.impact}
@@ -429,7 +392,7 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                <div className="flex space-x-4" data-oid="yvamdra">
+                <div className="flex space-x-4">
                   <motion.button
                     onClick={() => {
                       if (selectedProject.demoUrl.startsWith("/")) {
@@ -441,12 +404,10 @@ const ProjectsSection = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-neon-green text-dark-bg py-3 px-6 rounded-lg font-medium hover:bg-neon-green/90 transition-colors flex items-center"
-                    data-oid="_k.rk2p"
                   >
                     <ExternalLink
                       size={20}
                       className="mr-2"
-                      data-oid="_:lgd.k"
                     />
                     View Live Demo
                   </motion.button>
@@ -457,9 +418,8 @@ const ProjectsSection = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="border border-neon-green text-neon-green py-3 px-6 rounded-lg font-medium hover:bg-neon-green hover:text-dark-bg transition-colors flex items-center"
-                    data-oid="_penj3:"
                   >
-                    <Github size={20} className="mr-2" data-oid="bnlxwf." />
+                    <Github size={20} className="mr-2" />
                     View Source Code
                   </motion.a>
                 </div>

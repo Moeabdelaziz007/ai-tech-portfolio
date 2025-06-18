@@ -30,10 +30,9 @@ const ContextMenuSubTrigger = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="41vm48i"
   >
     {children}
-    <ChevronRight className="ml-auto h-4 w-4" data-oid="3m7jdlb" />
+    <ChevronRight className="ml-auto h-4 w-4" />
   </ContextMenuPrimitive.SubTrigger>
 ));
 ContextMenuSubTrigger.displayName = ContextMenuPrimitive.SubTrigger.displayName;
@@ -49,7 +48,6 @@ const ContextMenuSubContent = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="c7nz_1q"
   />
 ));
 ContextMenuSubContent.displayName = ContextMenuPrimitive.SubContent.displayName;
@@ -58,7 +56,7 @@ const ContextMenuContent = React.forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Content>
 >(({ className, ...props }, ref) => (
-  <ContextMenuPrimitive.Portal data-oid="1trv5yr">
+  <ContextMenuPrimitive.Portal>
     <ContextMenuPrimitive.Content
       ref={ref}
       className={cn(
@@ -66,7 +64,6 @@ const ContextMenuContent = React.forwardRef<
         className,
       )}
       {...props}
-      data-oid="wzy2e-2"
     />
   </ContextMenuPrimitive.Portal>
 ));
@@ -86,7 +83,6 @@ const ContextMenuItem = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="a-u9hlk"
   />
 ));
 ContextMenuItem.displayName = ContextMenuPrimitive.Item.displayName;
@@ -103,14 +99,12 @@ const ContextMenuCheckboxItem = React.forwardRef<
     )}
     checked={checked}
     {...props}
-    data-oid="k7b9xjl"
   >
     <span
       className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center"
-      data-oid="u5d_-e."
     >
-      <ContextMenuPrimitive.ItemIndicator data-oid="kf58.5f">
-        <Check className="h-4 w-4" data-oid="gflvt_k" />
+      <ContextMenuPrimitive.ItemIndicator>
+        <Check className="h-4 w-4" />
       </ContextMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -130,14 +124,12 @@ const ContextMenuRadioItem = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="i:2b:.b"
   >
     <span
       className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center"
-      data-oid="9fkx0zx"
     >
-      <ContextMenuPrimitive.ItemIndicator data-oid="ik0h_0g">
-        <Circle className="h-4 w-4 fill-current" data-oid="e-j0ud2" />
+      <ContextMenuPrimitive.ItemIndicator>
+        <Circle className="h-4 w-4 fill-current" />
       </ContextMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -159,7 +151,6 @@ const ContextMenuLabel = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid=":7w8m2-"
   />
 ));
 ContextMenuLabel.displayName = ContextMenuPrimitive.Label.displayName;
@@ -172,7 +163,6 @@ const ContextMenuSeparator = React.forwardRef<
     ref={ref}
     className={cn("-mx-1 my-1 h-px bg-zinc-200 dark:bg-zinc-800", className)}
     {...props}
-    data-oid="1wfjqyx"
   />
 ));
 ContextMenuSeparator.displayName = ContextMenuPrimitive.Separator.displayName;
@@ -188,7 +178,6 @@ const ContextMenuShortcut = ({
         className,
       )}
       {...props}
-      data-oid="p:x6a1l"
     />
   );
 };

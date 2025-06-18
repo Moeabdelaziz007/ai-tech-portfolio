@@ -11,7 +11,6 @@ function Skeleton({
         className,
       )}
       {...props}
-      data-oid="4th5kt0"
     />
   );
 }

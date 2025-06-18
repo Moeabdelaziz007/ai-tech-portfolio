@@ -25,7 +25,6 @@ const DialogOverlay = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="z:gonb0"
   />
 ));
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
@@ -34,8 +33,8 @@ const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
-  <DialogPortal data-oid="-n--2xr">
-    <DialogOverlay data-oid="d.-n22l" />
+  <DialogPortal>
+    <DialogOverlay />
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
@@ -43,15 +42,13 @@ const DialogContent = React.forwardRef<
         className,
       )}
       {...props}
-      data-oid="1oetnem"
     >
       {children}
       <DialogPrimitive.Close
         className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-zinc-100 data-[state=open]:text-zinc-500 dark:ring-offset-zinc-950 dark:focus:ring-zinc-300 dark:data-[state=open]:bg-zinc-800 dark:data-[state=open]:text-zinc-400"
-        data-oid="tc-dg11"
       >
-        <X className="h-4 w-4" data-oid="aiwffr-" />
-        <span className="sr-only" data-oid="von3f2b">
+        <X className="h-4 w-4" />
+        <span className="sr-only">
           Close
         </span>
       </DialogPrimitive.Close>
@@ -70,7 +67,6 @@ const DialogHeader = ({
       className,
     )}
     {...props}
-    data-oid="6j_eipz"
   />
 );
 
@@ -86,7 +82,6 @@ const DialogFooter = ({
       className,
     )}
     {...props}
-    data-oid="_2nw2om"
   />
 );
 
@@ -103,7 +98,6 @@ const DialogTitle = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="1:42jxg"
   />
 ));
 DialogTitle.displayName = DialogPrimitive.Title.displayName;
@@ -116,7 +110,6 @@ const DialogDescription = React.forwardRef<
     ref={ref}
     className={cn("text-sm text-zinc-500 dark:text-zinc-400", className)}
     {...props}
-    data-oid="xdy.t5_"
   />
 ));
 DialogDescription.displayName = DialogPrimitive.Description.displayName;

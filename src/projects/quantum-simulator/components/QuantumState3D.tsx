@@ -40,16 +40,15 @@ const BlochSphere: React.FC<BlochSphereProps> = ({
   });
 
   return (
-    <group position={[qubitIndex * 4 - 4, 0, 0]} data-oid="dpc6irp">
+    <group position={[qubitIndex * 4 - 4, 0, 0]}>
       {/* Bloch sphere wireframe */}
-      <mesh data-oid="pphqs56">
-        <sphereGeometry args={[1.5, 32, 32]} data-oid="-c1y6mu" />
+      <mesh>
+        <sphereGeometry args={[1.5, 32, 32]} />
         <meshBasicMaterial
           color="#f0f0f0"
           wireframe
           opacity={0.3}
           transparent
-          data-oid="tb3.-1j"
         />
       </mesh>
 
@@ -59,10 +58,9 @@ const BlochSphere: React.FC<BlochSphereProps> = ({
         position={position}
         onPointerOver={() => setHovered(true)}
         onPointerOut={() => setHovered(false)}
-        data-oid="hk6i-79"
       >
-        <sphereGeometry args={[0.1, 16, 16]} data-oid="o_-0wim" />
-        <meshBasicMaterial color={color} data-oid="o-013ri" />
+        <sphereGeometry args={[0.1, 16, 16]} />
+        <meshBasicMaterial color={color} />
       </mesh>
 
       {/* State line */}
@@ -72,7 +70,6 @@ const BlochSphere: React.FC<BlochSphereProps> = ({
         lineWidth={2}
         opacity={0.6}
         transparent
-        data-oid="80-xiq0"
       />
 
       {/* Qubit label */}
@@ -82,7 +79,6 @@ const BlochSphere: React.FC<BlochSphereProps> = ({
         color="#333"
         anchorX="center"
         anchorY="middle"
-        data-oid="95nq1kq"
       >
         {`q[${qubitIndex}]`}
       </Text>
@@ -95,7 +91,6 @@ const BlochSphere: React.FC<BlochSphereProps> = ({
           color="#666"
           anchorX="center"
           anchorY="middle"
-          data-oid="miu91ke"
         >
           {`θ: ${((state.theta * 180) / Math.PI).toFixed(1)}°\nφ: ${((state.phi * 180) / Math.PI).toFixed(1)}°`}
         </Text>
@@ -108,7 +103,6 @@ const BlochSphere: React.FC<BlochSphereProps> = ({
         color="#999"
         anchorX="center"
         anchorY="middle"
-        data-oid="j5u4vms"
       >
         |0⟩
       </Text>
@@ -118,7 +112,6 @@ const BlochSphere: React.FC<BlochSphereProps> = ({
         color="#999"
         anchorX="center"
         anchorY="middle"
-        data-oid="s2qfpbo"
       >
         |1⟩
       </Text>
@@ -178,20 +171,17 @@ const QuantumState3DScene: React.FC<QuantumState3DProps> = ({
   return (
     <div
       className="h-96 w-full bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg overflow-hidden"
-      data-oid="n80-b--"
     >
-      <Canvas camera={{ position: [0, 0, 8], fov: 60 }} data-oid="ll:b6.x">
-        <ambientLight intensity={0.6} data-oid="5:1jgay" />
+      <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
+        <ambientLight intensity={0.6} />
         <pointLight
           position={[10, 10, 10]}
           intensity={0.8}
-          data-oid="ei1:p4p"
         />
 
         <pointLight
           position={[-10, -10, -10]}
           intensity={0.4}
-          data-oid="5:bk0jc"
         />
 
         {/* Bloch spheres for each qubit */}
@@ -203,13 +193,12 @@ const QuantumState3DScene: React.FC<QuantumState3DProps> = ({
               qubitIndex={i}
               state={state}
               color={colors[i % colors.length]}
-              data-oid="86a2m9a"
             />
           );
         })}
 
         {/* Grid for reference */}
-        <gridHelper args={[20, 20, "#ddd", "#ddd"]} data-oid="n.5pd79" />
+        <gridHelper args={[20, 20, "#ddd", "#ddd"]} />
 
         <OrbitControls
           enablePan={true}
@@ -217,7 +206,6 @@ const QuantumState3DScene: React.FC<QuantumState3DProps> = ({
           enableRotate={true}
           maxDistance={20}
           minDistance={2}
-          data-oid="kufml9v"
         />
       </Canvas>
     </div>
@@ -228,26 +216,26 @@ export const QuantumState3D: React.FC<QuantumState3DProps> = (props) => {
   if (!props.isVisible) return null;
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 mb-6" data-oid="cqc4z9s">
-      <h3 className="text-xl font-bold text-gray-800 mb-4" data-oid="_s1i:y6">
+    <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+      <h3 className="text-xl font-bold text-gray-800 mb-4">
         Quantum State Visualization (3D)
       </h3>
-      <p className="text-sm text-gray-600 mb-4" data-oid="mk226mo">
+      <p className="text-sm text-gray-600 mb-4">
         Interactive 3D representation of quantum states on Bloch spheres. Hover
         over state vectors to see detailed information.
       </p>
 
-      <QuantumState3DScene {...props} data-oid="9oagcjt" />
+      <QuantumState3DScene {...props} />
 
-      <div className="mt-4 text-xs text-gray-500" data-oid="f-bgxz0">
-        <p data-oid="f0qdiqa">
-          <strong data-oid="0duckeg">Instructions:</strong>
+      <div className="mt-4 text-xs text-gray-500">
+        <p>
+          <strong>Instructions:</strong>
         </p>
-        <ul className="list-disc list-inside space-y-1" data-oid="0qx5mep">
-          <li data-oid="pp8:xno">Drag to rotate the view</li>
-          <li data-oid="m0sfy5n">Scroll to zoom in/out</li>
-          <li data-oid="_vf_v5y">Hover over state vectors for details</li>
-          <li data-oid="ie5k8js">Each sphere represents one qubit</li>
+        <ul className="list-disc list-inside space-y-1">
+          <li>Drag to rotate the view</li>
+          <li>Scroll to zoom in/out</li>
+          <li>Hover over state vectors for details</li>
+          <li>Each sphere represents one qubit</li>
         </ul>
       </div>
     </div>

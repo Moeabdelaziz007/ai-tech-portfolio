@@ -71,17 +71,16 @@ export const RefactorButton: React.FC<RefactorButtonProps> = ({
       onClick={handleRefactor}
       disabled={isRefactoring}
       className="bg-purple-500 hover:bg-purple-600 disabled:bg-purple-400 text-white px-4 py-2 rounded flex items-center gap-2 transition-colors"
-      data-oid="r8g:qhc"
     >
       {isRefactoring ? (
         <>
-          <BeatLoader color="#fff" size={8} data-oid="j7wgsum" />
-          <span data-oid="8xfz20o">Refactoring...</span>
+          <BeatLoader color="#fff" size={8} />
+          <span>Refactoring...</span>
         </>
       ) : (
         <>
-          <FaWrench data-oid=":0ihqs2" />
-          <span data-oid="0_m05ix">Refactor Code</span>
+          <FaWrench />
+          <span>Refactor Code</span>
         </>
       )}
     </button>
