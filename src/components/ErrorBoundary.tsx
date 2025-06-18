@@ -27,12 +27,17 @@ export class ErrorBoundary extends React.Component<
           <h2 className="text-red-500">
             Something went wrong.
           </h2>
+ mwwl8g-codex/rename-searilizeerror-to-serializeerror
+          <pre className="mt-2 text-sm" data-oid="372._g8">
+            {serializeError(this.state.error)}
+
  codex/remove-unnecessary-data-oid-attributes
           <pre className="mt-2 text-sm">
             {searilizeError(this.state.error)}
 
           <pre className="mt-2 text-sm" data-oid="372._g8">
             {serializeError(this.state.error)}
+ main
  main
           </pre>
         </div>
