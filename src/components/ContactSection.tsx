@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   Mail,
   Phone,
@@ -15,8 +15,8 @@ import {
   User,
   FileText,
   CheckCircle,
-  AlertCircle
-} from 'lucide-react';
+  AlertCircle,
+} from "lucide-react";
 
 const ContactSection = () => {
   const [ref, inView] = useInView({
@@ -25,140 +25,172 @@ const ContactSection = () => {
   });
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
-  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [formStatus, setFormStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormStatus('sending');
+    setFormStatus("sending");
 
     // Simulate form submission
     setTimeout(() => {
-      setFormStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
+      setFormStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
       // Reset status after 3 seconds
-      setTimeout(() => setFormStatus('idle'), 3000);
+      setTimeout(() => setFormStatus("idle"), 3000);
     }, 2000);
   };
 
   const socialLinks = [
     {
-      name: 'GitHub',
+      name: "GitHub",
       icon: Github,
-      url: 'https://github.com/moeabdelaziz007',
-      color: 'hover:text-tech-white',
-      description: 'View my code repositories'
+      url: "https://github.com/moeabdelaziz007",
+      color: "hover:text-tech-white",
+      description: "View my code repositories",
     },
     {
-      name: 'LinkedIn',
+      name: "LinkedIn",
       icon: Linkedin,
-      url: 'https://linkedin.com/in/mohamed-abdelaziz-815797347',
-      color: 'hover:text-blue-400',
-      description: 'Professional networking'
+      url: "https://linkedin.com/in/mohamed-abdelaziz-815797347",
+      color: "hover:text-blue-400",
+      description: "Professional networking",
     },
     {
-      name: 'Instagram',
+      name: "Instagram",
       icon: Instagram,
-      url: 'https://instagram.com/amrikyy',
-      color: 'hover:text-pink-400',
-      description: 'Follow my journey'
+      url: "https://instagram.com/amrikyy",
+      color: "hover:text-pink-400",
+      description: "Follow my journey",
     },
     {
-      name: 'Facebook',
+      name: "Facebook",
       icon: Facebook,
-      url: 'https://facebook.com/share/17qHw2N9PG',
-      color: 'hover:text-blue-500',
-      description: 'Connect on Facebook'
+      url: "https://facebook.com/share/17qHw2N9PG",
+      color: "hover:text-blue-500",
+      description: "Connect on Facebook",
     },
     {
-      name: 'Portfolio',
+      name: "Portfolio",
       icon: Globe,
-      url: 'https://moeabdelaziz007.github.io/amrikyy/',
-      color: 'hover:text-neon-green',
-      description: 'Visit my portfolio site'
-    }
+      url: "https://moeabdelaziz007.github.io/amrikyy/",
+      color: "hover:text-neon-green",
+      description: "Visit my portfolio site",
+    },
   ];
 
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'amrikyy@gmail.com',
-      href: 'mailto:amrikyy@gmail.com',
-      color: 'text-neon-green'
+      label: "Email",
+      value: "amrikyy@gmail.com",
+      href: "mailto:amrikyy@gmail.com",
+      color: "text-neon-green",
     },
     {
       icon: Phone,
-      label: 'Egypt',
-      value: '+20 109 422 8044',
-      href: 'tel:+201094228044',
-      color: 'text-quantum-blue'
+      label: "Egypt",
+      value: "+20 109 422 8044",
+      href: "tel:+201094228044",
+      color: "text-quantum-blue",
     },
     {
       icon: Phone,
-      label: 'USA',
-      value: '+1 770 616 0211',
-      href: 'tel:+17706160211',
-      color: 'text-bitcoin-orange'
+      label: "USA",
+      value: "+1 770 616 0211",
+      href: "tel:+17706160211",
+      color: "text-bitcoin-orange",
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'Cairo, Egypt',
-      href: '#',
-      color: 'text-medium-gray'
-    }
+      label: "Location",
+      value: "Cairo, Egypt",
+      href: "#",
+      color: "text-medium-gray",
+    },
   ];
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="container mx-auto px-4" ref={ref}>
+    <section id="contact" className="py-20 relative" data-oid="e7zthlr">
+      <div className="container mx-auto px-4" ref={ref} data-oid="etmoi7_">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
+          data-oid="ewh.-.s"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-tech-white">Get In </span>
-            <span className="text-neon-green">Touch</span>
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-6"
+            data-oid="-12gqqx"
+          >
+            <span className="text-tech-white" data-oid="ehri2xl">
+              Get In{" "}
+            </span>
+            <span className="text-neon-green" data-oid="epj4l73">
+              Touch
+            </span>
           </h2>
-          <p className="text-xl text-medium-gray max-w-3xl mx-auto">
-            Ready to collaborate on cutting-edge AI and cybersecurity projects? 
+          <p
+            className="text-xl text-medium-gray max-w-3xl mx-auto"
+            data-oid="_c1qs9r"
+          >
+            Ready to collaborate on cutting-edge AI and cybersecurity projects?
             Let's connect and build the future together.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12" data-oid="xnqx.e2">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="glass-effect p-8 rounded-xl"
+            data-oid="u51o103"
           >
-            <h3 className="text-2xl font-bold text-tech-white mb-6 flex items-center">
-              <MessageSquare className="text-neon-green mr-3" size={24} />
+            <h3
+              className="text-2xl font-bold text-tech-white mb-6 flex items-center"
+              data-oid="dhi7c7x"
+            >
+              <MessageSquare
+                className="text-neon-green mr-3"
+                size={24}
+                data-oid="dz_w2vu"
+              />
               Send a Message
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-medium-gray" size={20} />
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6"
+              data-oid="mxcvv-a"
+            >
+              <div className="grid md:grid-cols-2 gap-4" data-oid="6xvp143">
+                <div className="relative" data-oid="_0xjfyb">
+                  <User
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-medium-gray"
+                    size={20}
+                    data-oid="pacfvh3"
+                  />
+
                   <input
                     type="text"
                     name="name"
@@ -167,11 +199,17 @@ const ContactSection = () => {
                     placeholder="Your Name"
                     required
                     className="w-full pl-12 pr-4 py-3 bg-dark-bg/50 border border-neon-green/20 rounded-lg text-tech-white placeholder-medium-gray focus:border-neon-green focus:outline-none transition-colors"
+                    data-oid=":4-4_0t"
                   />
                 </div>
-                
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-medium-gray" size={20} />
+
+                <div className="relative" data-oid="g_--3xr">
+                  <Mail
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-medium-gray"
+                    size={20}
+                    data-oid="ba_0fpb"
+                  />
+
                   <input
                     type="email"
                     name="email"
@@ -180,12 +218,18 @@ const ContactSection = () => {
                     placeholder="Your Email"
                     required
                     className="w-full pl-12 pr-4 py-3 bg-dark-bg/50 border border-neon-green/20 rounded-lg text-tech-white placeholder-medium-gray focus:border-neon-green focus:outline-none transition-colors"
+                    data-oid="6hc.mvv"
                   />
                 </div>
               </div>
 
-              <div className="relative">
-                <FileText className="absolute left-3 top-1/2 transform -translate-y-1/2 text-medium-gray" size={20} />
+              <div className="relative" data-oid=":uof1a:">
+                <FileText
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-medium-gray"
+                  size={20}
+                  data-oid="744f1:h"
+                />
+
                 <input
                   type="text"
                   name="subject"
@@ -194,11 +238,17 @@ const ContactSection = () => {
                   placeholder="Subject"
                   required
                   className="w-full pl-12 pr-4 py-3 bg-dark-bg/50 border border-neon-green/20 rounded-lg text-tech-white placeholder-medium-gray focus:border-neon-green focus:outline-none transition-colors"
+                  data-oid="kn:-9vu"
                 />
               </div>
 
-              <div className="relative">
-                <MessageSquare className="absolute left-3 top-4 text-medium-gray" size={20} />
+              <div className="relative" data-oid="ck23xq6">
+                <MessageSquare
+                  className="absolute left-3 top-4 text-medium-gray"
+                  size={20}
+                  data-oid="dbiovth"
+                />
+
                 <textarea
                   name="message"
                   value={formData.message}
@@ -207,46 +257,52 @@ const ContactSection = () => {
                   required
                   rows={5}
                   className="w-full pl-12 pr-4 py-3 bg-dark-bg/50 border border-neon-green/20 rounded-lg text-tech-white placeholder-medium-gray focus:border-neon-green focus:outline-none transition-colors resize-none"
+                  data-oid="88n::g8"
                 />
               </div>
 
               <motion.button
                 type="submit"
-                disabled={formStatus === 'sending'}
+                disabled={formStatus === "sending"}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-4 rounded-lg font-semibold transition-all flex items-center justify-center space-x-2 ${
-                  formStatus === 'sending'
-                    ? 'bg-medium-gray cursor-not-allowed'
-                    : formStatus === 'success'
-                    ? 'bg-green-500 text-white'
-                    : formStatus === 'error'
-                    ? 'bg-red-500 text-white'
-                    : 'bg-neon-green text-dark-bg hover:bg-neon-green/90'
+                  formStatus === "sending"
+                    ? "bg-medium-gray cursor-not-allowed"
+                    : formStatus === "success"
+                      ? "bg-green-500 text-white"
+                      : formStatus === "error"
+                        ? "bg-red-500 text-white"
+                        : "bg-neon-green text-dark-bg hover:bg-neon-green/90"
                 }`}
+                data-oid="ak4vn3j"
               >
-                {formStatus === 'sending' && (
+                {formStatus === "sending" && (
                   <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Sending...</span>
+                    <div
+                      className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"
+                      data-oid="jkd7jdk"
+                    />
+
+                    <span data-oid="-qyvyns">Sending...</span>
                   </>
                 )}
-                {formStatus === 'success' && (
+                {formStatus === "success" && (
                   <>
-                    <CheckCircle size={20} />
-                    <span>Message Sent!</span>
+                    <CheckCircle size={20} data-oid="cd9b8lt" />
+                    <span data-oid=":qb6-mt">Message Sent!</span>
                   </>
                 )}
-                {formStatus === 'error' && (
+                {formStatus === "error" && (
                   <>
-                    <AlertCircle size={20} />
-                    <span>Error. Try Again</span>
+                    <AlertCircle size={20} data-oid="boj9dbx" />
+                    <span data-oid="tznnow4">Error. Try Again</span>
                   </>
                 )}
-                {formStatus === 'idle' && (
+                {formStatus === "idle" && (
                   <>
-                    <Send size={20} />
-                    <span>Send Message</span>
+                    <Send size={20} data-oid="qc.eh3i" />
+                    <span data-oid="w-dsjqj">Send Message</span>
                   </>
                 )}
               </motion.button>
@@ -259,11 +315,17 @@ const ContactSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-8"
+            data-oid="8huy-b3"
           >
             {/* Contact Information */}
-            <div className="glass-effect p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-tech-white mb-6">Contact Information</h3>
-              <div className="space-y-4">
+            <div className="glass-effect p-8 rounded-xl" data-oid="6l8t6:w">
+              <h3
+                className="text-2xl font-bold text-tech-white mb-6"
+                data-oid="-1um0.l"
+              >
+                Contact Information
+              </h3>
+              <div className="space-y-4" data-oid="ln3ud3q">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
@@ -275,13 +337,29 @@ const ContactSection = () => {
                       transition={{ delay: 0.6 + index * 0.1 }}
                       whileHover={{ x: 5 }}
                       className={`flex items-center space-x-4 p-3 rounded-lg hover:bg-dark-bg/30 transition-all group ${
-                        info.href === '#' ? 'cursor-default' : 'cursor-pointer'
+                        info.href === "#" ? "cursor-default" : "cursor-pointer"
                       }`}
+                      data-oid="u-m---z"
                     >
-                      <Icon className={`${info.color} group-hover:scale-110 transition-transform`} size={24} />
-                      <div>
-                        <div className="text-medium-gray text-sm">{info.label}</div>
-                        <div className="text-tech-white font-medium">{info.value}</div>
+                      <Icon
+                        className={`${info.color} group-hover:scale-110 transition-transform`}
+                        size={24}
+                        data-oid="dbzggbm"
+                      />
+
+                      <div data-oid=":s78v2p">
+                        <div
+                          className="text-medium-gray text-sm"
+                          data-oid="18eubq3"
+                        >
+                          {info.label}
+                        </div>
+                        <div
+                          className="text-tech-white font-medium"
+                          data-oid="psmx9bo"
+                        >
+                          {info.value}
+                        </div>
                       </div>
                     </motion.a>
                   );
@@ -290,9 +368,14 @@ const ContactSection = () => {
             </div>
 
             {/* Social Media Links */}
-            <div className="glass-effect p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-tech-white mb-6">Connect With Me</h3>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="glass-effect p-8 rounded-xl" data-oid="v3oi623">
+              <h3
+                className="text-2xl font-bold text-tech-white mb-6"
+                data-oid="uj0bud3"
+              >
+                Connect With Me
+              </h3>
+              <div className="grid grid-cols-2 gap-4" data-oid="org.5xx">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
                   return (
@@ -304,17 +387,31 @@ const ContactSection = () => {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={inView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ delay: 0.8 + index * 0.1 }}
-                      whileHover={{ 
-                        scale: 1.05, 
+                      whileHover={{
+                        scale: 1.05,
                         y: -5,
-                        boxShadow: '0 10px 25px rgba(0, 255, 0, 0.2)'
+                        boxShadow: "0 10px 25px rgba(0, 255, 0, 0.2)",
                       }}
                       whileTap={{ scale: 0.95 }}
                       className={`flex flex-col items-center p-4 bg-dark-bg/50 rounded-lg border border-neon-green/20 hover:border-neon-green/40 transition-all group text-center ${social.color}`}
+                      data-oid="gjob1uw"
                     >
-                      <Icon size={32} className="mb-2 text-medium-gray group-hover:text-current transition-colors" />
-                      <span className="text-tech-white font-medium mb-1">{social.name}</span>
-                      <span className="text-xs text-medium-gray group-hover:text-current transition-colors">
+                      <Icon
+                        size={32}
+                        className="mb-2 text-medium-gray group-hover:text-current transition-colors"
+                        data-oid="gi43fth"
+                      />
+
+                      <span
+                        className="text-tech-white font-medium mb-1"
+                        data-oid="a9p0s53"
+                      >
+                        {social.name}
+                      </span>
+                      <span
+                        className="text-xs text-medium-gray group-hover:text-current transition-colors"
+                        data-oid="jmie-:2"
+                      >
                         {social.description}
                       </span>
                     </motion.a>
@@ -329,13 +426,20 @@ const ContactSection = () => {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.2 }}
               className="glass-effect p-8 rounded-xl text-center"
+              data-oid="a0t9u:2"
             >
-              <div className="text-4xl text-neon-green mb-4">"</div>
-              <p className="text-lg text-tech-white mb-4 italic">
-                Innovation happens when artificial intelligence meets cybersecurity, 
-                creating solutions that protect and empower the digital future.
+              <div className="text-4xl text-neon-green mb-4" data-oid="9895yjl">
+                "
+              </div>
+              <p
+                className="text-lg text-tech-white mb-4 italic"
+                data-oid="tmi5zt_"
+              >
+                Innovation happens when artificial intelligence meets
+                cybersecurity, creating solutions that protect and empower the
+                digital future.
               </p>
-              <div className="text-medium-gray">
+              <div className="text-medium-gray" data-oid="fvkcrm9">
                 — Mohamed H. Abdelaziz (Amrikyy)
               </div>
             </motion.div>
@@ -348,35 +452,48 @@ const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.4 }}
           className="text-center mt-16"
+          data-oid="o:wkeqi"
         >
-          <div className="glass-effect p-8 rounded-xl">
-            <h3 className="text-2xl font-bold text-tech-white mb-4">
+          <div className="glass-effect p-8 rounded-xl" data-oid="cq6oe8z">
+            <h3
+              className="text-2xl font-bold text-tech-white mb-4"
+              data-oid="m9vjqv4"
+            >
               Ready to Start a Project?
             </h3>
-            <p className="text-medium-gray mb-6 max-w-2xl mx-auto">
-              Whether you need AI solutions, cybersecurity consulting, or innovative web applications, 
-              I'm here to help bring your ideas to life with cutting-edge technology.
+            <p
+              className="text-medium-gray mb-6 max-w-2xl mx-auto"
+              data-oid="5:-zvh7"
+            >
+              Whether you need AI solutions, cybersecurity consulting, or
+              innovative web applications, I'm here to help bring your ideas to
+              life with cutting-edge technology.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              data-oid="q9i.u3g"
+            >
               <motion.a
                 href="mailto:amrikyy@gmail.com?subject=Project Collaboration"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-neon-green text-dark-bg font-semibold rounded-lg hover:bg-neon-green/90 transition-colors flex items-center justify-center space-x-2"
+                data-oid="e0:ml2x"
               >
-                <Mail size={20} />
-                <span>Start a Conversation</span>
+                <Mail size={20} data-oid="5:912bp" />
+                <span data-oid="8xbsbio">Start a Conversation</span>
               </motion.a>
-              
+
               <motion.a
                 href="/cv/Mohamed_Abdelaziz_CV.pdf"
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 border border-neon-green text-neon-green hover:bg-neon-green hover:text-dark-bg transition-colors rounded-lg flex items-center justify-center space-x-2"
+                data-oid="f.wx4af"
               >
-                <FileText size={20} />
-                <span>Download Resume</span>
+                <FileText size={20} data-oid="o5-jnk-" />
+                <span data-oid="cay8l8-">Download Resume</span>
               </motion.a>
             </div>
           </div>

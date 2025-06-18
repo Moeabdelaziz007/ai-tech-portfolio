@@ -4,7 +4,7 @@ import viteCompression from "vite-plugin-compression"
 import { defineConfig } from "vite"
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? "/ai-tech-portfolio/" : "/",
+  base: '/ai-tech-portfolio/',
   plugins: [react(), viteCompression({ algorithm: 'brotliCompress' })],
   resolve: {
     alias: {

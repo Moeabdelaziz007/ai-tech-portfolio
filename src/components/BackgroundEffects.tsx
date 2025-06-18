@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const BackgroundEffects = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -8,7 +8,7 @@ const BackgroundEffects = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const resizeCanvas = () => {
@@ -17,7 +17,7 @@ const BackgroundEffects = () => {
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
     // Neural network nodes
     const nodes: Array<{
@@ -55,7 +55,7 @@ const BackgroundEffects = () => {
         // Draw node
         ctx.beginPath();
         ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 255, 0, 0.6)';
+        ctx.fillStyle = "rgba(0, 255, 0, 0.6)";
         ctx.fill();
 
         // Find connections
@@ -63,7 +63,8 @@ const BackgroundEffects = () => {
         nodes.forEach((otherNode, j) => {
           if (i !== j) {
             const distance = Math.sqrt(
-              Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
+              Math.pow(node.x - otherNode.x, 2) +
+                Math.pow(node.y - otherNode.y, 2),
             );
             if (distance < 150) {
               node.connections.push(j);
@@ -75,7 +76,8 @@ const BackgroundEffects = () => {
         node.connections.forEach((connectionIndex) => {
           const connectedNode = nodes[connectionIndex];
           const distance = Math.sqrt(
-            Math.pow(node.x - connectedNode.x, 2) + Math.pow(node.y - connectedNode.y, 2)
+            Math.pow(node.x - connectedNode.x, 2) +
+              Math.pow(node.y - connectedNode.y, 2),
           );
           const opacity = 1 - distance / 150;
 
@@ -94,7 +96,7 @@ const BackgroundEffects = () => {
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener("resize", resizeCanvas);
     };
   }, []);
 
@@ -124,18 +126,13 @@ const BackgroundEffects = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
       {/* Neural Network Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 opacity-20"
-      />
+      <canvas ref={canvasRef} className="absolute inset-0 opacity-20" />
 
       {/* Cyber Grid */}
       <div className="absolute inset-0 cyber-grid opacity-10" />
 
       {/* Quantum Particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {quantumParticles}
-      </div>
+      <div className="absolute inset-0 overflow-hidden">{quantumParticles}</div>
 
       {/* Matrix Rain Effect */}
       <div className="absolute inset-0 overflow-hidden opacity-5">

@@ -1,5 +1,8 @@
 // Quantum Gate Types
-export type GateType = 'X' | 'Y' | 'Z' | 'H' | 'CNOT' | 'SWAP' | 'CZ' | 'CX';
+export type GateType = 'X' | 'Y' | 'Z' | 'H' | 'CNOT' | 'SWAP' | 'CZ' | 'CX' | 'S' | 'T' | 'Sdg' | 'Tdg' | 'RX' | 'RY' | 'RZ' | 'CRX' | 'CRY' | 'CRZ' | 'CCX' | 'CCZ' | 'CSWAP' | 'U1' | 'U2' | 'U3';
+
+// Advanced Gate Types
+export type AdvancedGateType = 'S' | 'T' | 'Sdg' | 'Tdg' | 'RX' | 'RY' | 'RZ' | 'CRX' | 'CRY' | 'CRZ' | 'CCX' | 'CCZ' | 'CSWAP' | 'U1' | 'U2' | 'U3';
 
 // Quantum Gate Interface
 export interface Gate {

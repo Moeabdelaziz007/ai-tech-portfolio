@@ -69,10 +69,11 @@ export function createUGate(params: number[]): math.Matrix {
   } else if (params.length === 2) {
     // U2 gate
     const [phi, lambda] = params;
-    return math.matrix([
+    const factor = 1 / Math.sqrt(2);
+    return math.multiply(math.matrix([
       [1, -math.exp(math.i * lambda)],
       [math.exp(math.i * phi), math.exp(math.i * (phi + lambda))]
-    ]) as math.Matrix * (1 / Math.sqrt(2));
+    ]), factor) as math.Matrix;
   } else if (params.length === 3) {
     // U3 gate (most general single-qubit gate)
     const [theta, phi, lambda] = params;
