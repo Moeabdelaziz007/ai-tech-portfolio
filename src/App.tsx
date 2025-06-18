@@ -7,6 +7,7 @@ import DashboardSection from './components/DashboardSection';
 import ContactSection from './components/ContactSection';
 import Navigation from './components/Navigation';
 import BackgroundEffects from './components/BackgroundEffects';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <DashboardSection />
         <ContactSection />
       </main>
+      
+      <Chatbot />
       
       {/* Footer */}
       <footer className="relative z-10 bg-black py-8 border-t border-neon-green/20">
