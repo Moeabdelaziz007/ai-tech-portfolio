@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -8,10 +9,13 @@ import ContactSection from './components/ContactSection';
 import Navigation from './components/Navigation';
 import BackgroundEffects from './components/BackgroundEffects';
 import Chatbot from './components/Chatbot';
+import { QuantumSimulatorPage } from './projects/quantum-simulator/pages/QuantumSimulatorPage';
+import { CodeAssistantPage } from './projects/code-assistant/pages/CodeAssistantPage';
 
-function App() {
+// Main Portfolio Component
+const Portfolio: React.FC = () => {
   return (
-    <div className="min-h-screen bg-dark-bg text-tech-white relative overflow-x-hidden">
+    <>
       <BackgroundEffects />
       <Navigation />
       
@@ -43,7 +47,21 @@ function App() {
           </motion.div>
         </div>
       </footer>
-    </div>
+    </>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-dark-bg text-tech-white relative overflow-x-hidden">
+        <Routes>
+          <Route path="/" element={<Portfolio />} />
+          <Route path="/projects/quantum-simulator" element={<QuantumSimulatorPage />} />
+          <Route path="/projects/code-assistant" element={<CodeAssistantPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

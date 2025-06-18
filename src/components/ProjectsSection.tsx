@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from 'react-router-dom';
 import { 
   Github, 
   ExternalLink, 
@@ -32,6 +33,7 @@ const ProjectsSection = () => {
     threshold: 0.1,
   });
 
+  const navigate = useNavigate();
   const [projects, setProjects] = useState<Project[]>([]);
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [activeFilter, setActiveFilter] = useState('All');
@@ -59,6 +61,15 @@ const ProjectsSection = () => {
     }
   };
 
+  const handleProjectClick = (project: Project) => {
+    // Check if it's an internal route
+    if (project.demoUrl.startsWith('/')) {
+      navigate(project.demoUrl);
+    } else {
+      setSelectedProject(project);
+    }
+  };
+
   const getTechColor = (tech: string) => {
     const colors: { [key: string]: string } = {
       'Python': 'bg-blue-500',
@@ -77,6 +88,9 @@ const ProjectsSection = () => {
       'D3.js': 'bg-orange-400',
       'Flask': 'bg-gray-500',
       'Quantum.js': 'bg-purple-600',
+      'Math.js': 'bg-indigo-500',
+      'Chart.js': 'bg-pink-500',
+      'Quantum Computing': 'bg-purple-700',
     };
     return colors[tech] || 'bg-medium-gray';
   };
@@ -142,7 +156,7 @@ const ProjectsSection = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="glass-effect rounded-xl overflow-hidden group cursor-pointer"
-                onClick={() => setSelectedProject(project)}
+                onClick={() => handleProjectClick(project)}
               >
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -204,18 +218,22 @@ const ProjectsSection = () => {
 
                   {/* Action Buttons */}
                   <div className="flex space-x-3">
-                    <motion.a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <motion.button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (project.demoUrl.startsWith('/')) {
+                          navigate(project.demoUrl);
+                        } else {
+                          window.open(project.demoUrl, '_blank');
+                        }
+                      }}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="flex-1 bg-neon-green text-dark-bg py-2 px-4 rounded-lg font-medium hover:bg-neon-green/90 transition-colors flex items-center justify-center text-sm"
-                      onClick={(e) => e.stopPropagation()}
                     >
                       <ExternalLink size={16} className="mr-2" />
                       Demo
-                    </motion.a>
+                    </motion.button>
                     <motion.a
                       href={project.githubUrl}
                       target="_blank"
@@ -301,17 +319,21 @@ const ProjectsSection = () => {
                 </div>
 
                 <div className="flex space-x-4">
-                  <motion.a
-                    href={selectedProject.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <motion.button
+                    onClick={() => {
+                      if (selectedProject.demoUrl.startsWith('/')) {
+                        navigate(selectedProject.demoUrl);
+                      } else {
+                        window.open(selectedProject.demoUrl, '_blank');
+                      }
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-neon-green text-dark-bg py-3 px-6 rounded-lg font-medium hover:bg-neon-green/90 transition-colors flex items-center"
                   >
                     <ExternalLink size={20} className="mr-2" />
                     View Live Demo
-                  </motion.a>
+                  </motion.button>
                   <motion.a
                     href={selectedProject.githubUrl}
                     target="_blank"

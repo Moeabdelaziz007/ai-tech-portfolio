@@ -191,3 +191,161 @@
     transform: translate(2px, -2px);
   }
 }
+
+/* Custom CSS Variables */
+:root {
+  --dark-bg: #0a0a0a;
+  --tech-white: #ffffff;
+  --medium-gray: #6b7280;
+  --neon-green: #00ff88;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--dark-bg);
+  color: var(--tech-white);
+  overflow-x: hidden;
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Line Clamp Utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Quantum Simulator Mobile Responsive */
+@media (max-width: 768px) {
+  .circuit-container {
+    flex-direction: column;
+  }
+  
+  .qubit-lane {
+    width: 100% !important;
+    min-height: 60px;
+  }
+  
+  .gate-selector {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .circuit-editor {
+    padding: 1rem;
+  }
+  
+  .simulation-controls {
+    padding: 1rem;
+  }
+  
+  .result-chart {
+    height: 300px;
+  }
+}
+
+/* Touch-friendly interactions */
+.touch-pan-y {
+  touch-action: pan-y;
+}
+
+.touch-none {
+  touch-action: none;
+}
+
+/* Quantum Gate Hover Effects */
+.gate-component {
+  transition: all 0.2s ease-in-out;
+}
+
+.gate-component:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gate-component:active {
+  transform: scale(0.95);
+}
+
+/* Circuit Lane Interactions */
+.circuit-lane {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.circuit-lane:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.circuit-lane:active {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Loading States */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error and Warning States */
+.error-border {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+
+.warning-border {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 1px #f59e0b;
+}
+
+/* Focus States for Accessibility */
+.focus-ring:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .glass-effect {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--tech-white);
+  }
+  
+  .gate-component {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .gate-component:hover {
+    transform: none;
+  }
+}

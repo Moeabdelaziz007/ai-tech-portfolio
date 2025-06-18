@@ -15,17 +15,17 @@
   },
   {
     "id": 2,
-    "title": "Quantum Simulator Web App",
-    "description": "Interactive quantum computing simulator with advanced visualization capabilities",
-    "longDescription": "Built a web-based quantum computing simulator that allows users to experiment with quantum algorithms and visualize quantum states. Features include circuit building, state visualization, and educational tutorials.",
-    "image": "/images/project-mobile.webp",
-    "technologies": ["React", "TypeScript", "Three.js", "WebGL", "Quantum.js"],
+    "title": "Quantum Circuit Simulator",
+    "description": "Interactive quantum computing simulator with real-time circuit building and measurement visualization",
+    "longDescription": "Built a comprehensive quantum circuit simulator that allows users to design, build, and simulate quantum circuits with real-time visualization. Features include drag-and-drop gate placement, multiple simulation modes (exact and sampling), and educational examples like Bell states and GHZ states. The simulator uses advanced mathematical libraries for accurate quantum state calculations and provides detailed measurement statistics.",
+    "image": "/images/quantum-bg.jpg",
+    "technologies": ["React", "TypeScript", "Math.js", "Chart.js", "Quantum Computing"],
     "category": "Quantum",
-    "demoUrl": "https://quantum-sim.example.com",
-    "githubUrl": "https://github.com/example/quantum-simulator",
+    "demoUrl": "/projects/quantum-simulator",
+    "githubUrl": "https://github.com/Moeabdelaziz007/ai-tech-portfolio",
     "featured": true,
     "completion": "2024",
-    "impact": "Used by over 1000 students and researchers worldwide"
+    "impact": "Educational tool for quantum computing concepts with interactive circuit design"
   },
   {
     "id": 3,
@@ -54,5 +54,19 @@
     "featured": false,
     "completion": "2023",
     "impact": "Featured in 5 AI education conferences"
+  },
+  {
+    "id": 5,
+    "title": "AI-Powered Code Assistant",
+    "description": "Real-time code completion and explanation using transformer models",
+    "longDescription": "An in-browser IDE-like environment powered by Monaco Editor with live AI code completion. Users can choose between multiple transformer models (Codex, GPT-J, CodeGen), view completion statistics, and receive natural-language explanations for their code.",
+    "image": "/images/project-mobile.webp",
+    "technologies": ["React", "TypeScript", "Monaco Editor", "Transformer Models"],
+    "category": "AI/ML",
+    "demoUrl": "/projects/code-assistant",
+    "githubUrl": "https://github.com/Moeabdelaziz007/ai-tech-portfolio",
+    "featured": true,
+    "completion": "2024",
+    "impact": "Demonstrates local AI-assisted coding capabilities in the browser"
   }
 ]
