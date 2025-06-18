@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://cryptojoker710.github.io/ai-tech-portfolio/",
+  "homepage": "https://Moeabdelaziz007.github.io/ai-tech-portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

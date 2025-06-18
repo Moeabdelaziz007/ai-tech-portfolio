@@ -26,7 +26,7 @@ A modern, responsive portfolio website showcasing AI and technology projects. Bu
 
 ```bash
 # Clone the repository | استنسخ المستودع
-git clone https://github.com/cryptojoker710/ai-tech-portfolio.git
+git clone https://github.com/Moeabdelaziz007/ai-tech-portfolio.git
 
 # Navigate to project directory | انتقل إلى مجلد المشروع
 cd ai-tech-portfolio
@@ -72,9 +72,9 @@ pnpm run deploy
 
 ### Live Demo | العرض المباشر
 
-Visit the live site: [https://cryptojoker710.github.io/ai-tech-portfolio/](https://cryptojoker710.github.io/ai-tech-portfolio/)
+Visit the live site: [https://Moeabdelaziz007.github.io/ai-tech-portfolio/](https://Moeabdelaziz007.github.io/ai-tech-portfolio/)
 
-زور الموقع المباشر: [https://cryptojoker710.github.io/ai-tech-portfolio/](https://cryptojoker710.github.io/ai-tech-portfolio/)
+زور الموقع المباشر: [https://Moeabdelaziz007.github.io/ai-tech-portfolio/](https://Moeabdelaziz007.github.io/ai-tech-portfolio/)
 
 ## 📁 Project Structure | هيكل المشروع
 
@@ -108,7 +108,7 @@ This project is licensed under the MIT License.
 
 ## 📞 Contact | التواصل
 
-- **GitHub**: [@cryptojoker710](https://github.com/cryptojoker710)
+- **GitHub**: [@Moeabdelaziz007](https://github.com/Moeabdelaziz007)
 - **Email**: [Your Email | بريدك الإلكتروني]
 
 ---

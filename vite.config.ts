@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
 export default defineConfig({
-  base: "/ai-tech-portfolio/",
+  base: process.env.NODE_ENV === 'production' ? "/ai-tech-portfolio/" : "/",
   plugins: [react()],
   resolve: {
     alias: {
